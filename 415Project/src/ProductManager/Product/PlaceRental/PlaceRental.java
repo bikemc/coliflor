@@ -1,4 +1,4 @@
-package PlaceRental;
+package ProductManager.Product.PlaceRental;
 
 import java.util.Date;
 

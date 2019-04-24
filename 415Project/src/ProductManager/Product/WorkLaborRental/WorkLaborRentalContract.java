@@ -1,5 +1,4 @@
-package WorkLaborRental;
-
+package ProductManager.Product.WorkLaborRental;
 public class WorkLaborRentalContract {
     double deposit;
 

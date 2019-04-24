@@ -1,4 +1,4 @@
-package BookWork;
+package ProductManager.CommonalityManager.BookWork;
 
 import RentalSystemManager.Publication;
 import RentalSystemManager.User;

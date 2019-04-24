@@ -1,4 +1,4 @@
-package BookRental;
+package ProductManager.Product.BookRental;
 
 import java.util.ArrayList;
 import java.util.List;

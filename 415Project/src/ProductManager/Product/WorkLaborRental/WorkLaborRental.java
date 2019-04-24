@@ -1,4 +1,4 @@
-package WorkLaborRental;
+package ProductManager.Product.WorkLaborRental;
 
 import java.util.ArrayList;
 import java.util.Map;

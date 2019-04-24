@@ -1,5 +1,4 @@
-package WorkLaborRental;
-
+package ProductManager.Product.WorkLaborRental;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

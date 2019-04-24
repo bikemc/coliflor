@@ -1,4 +1,4 @@
-package BookRental;
+package ProductManager.Product.BookRental;
 
 public class BookRentalContract {
     private double penaltyPerDay;

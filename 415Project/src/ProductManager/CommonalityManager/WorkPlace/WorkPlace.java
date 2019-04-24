@@ -1,4 +1,7 @@
-package WorkPlace;
+package ProductManager.CommonalityManager.WorkPlace;
+
+import RentalSystemManager.Publication;
+import RentalSystemManager.User;
 
 import java.util.ArrayList;
 import java.util.Date;
