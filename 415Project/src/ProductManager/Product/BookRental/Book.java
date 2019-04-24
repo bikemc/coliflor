@@ -1,6 +1,11 @@
 package ProductManager.Product.BookRental;
 
-public class Book {
+import RentalSystemManager.Product;
+import RentalSystemManager.Review;
+
+import java.util.List;
+
+public class Book extends Product {
     private String bookTitle;
     private int pageNo;
     private String author;
@@ -13,7 +18,8 @@ public class Book {
         NOVEL, SCIENCEFICTION, DRAMA, ACTION, BIOGRAPHY, COMICS
     }
 
-    public Book(String bookTitle, int pageNo, String author, int publicationYear, String address, String preview, int point) {
+    public Book(double price, String description, boolean onRent, List<Review> reviews, String bookTitle, int pageNo, String author, int publicationYear, String address, String preview, int point) {
+        super(price, description, onRent, reviews);
         this.bookTitle = bookTitle;
         this.pageNo = pageNo;
         this.author = author;
