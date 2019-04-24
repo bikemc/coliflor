@@ -9,7 +9,11 @@ import java.util.Date;
 /**
  * Created by pc on 24.04.2019.
  */
+<<<<<<< HEAD
 public class PlaceRentalContract extends Contract {
+=======
+public class PlaceRentalContract extends Contract{
+>>>>>>> denizsen
 
     double deposit;
 

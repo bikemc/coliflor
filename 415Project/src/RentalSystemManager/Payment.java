@@ -24,4 +24,7 @@ public class Payment {
     public void setPublication(Publication publication) {
         this.publication = publication;
     }
+
+
+
 }

@@ -21,6 +21,7 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace, Filter{
     }
 
     @Override
+<<<<<<< HEAD
     public void shareInSocialMedia(User user, Publication publication, String socialMedia) {
 
     }
@@ -28,6 +29,15 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace, Filter{
     @Override
     public boolean checkCurrentAvailability(Publication publication, Date currentDate) {
         return false;
+=======
+    public ArrayList<Publication> filter(String filterType, String filterOptions) {
+        return null;
+    }
+
+    @Override
+    public void shareInSocialMedia(User user, Publication publication, String socialMedia) {
+
+>>>>>>> denizsen
     }
 
     @Override
@@ -36,6 +46,14 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace, Filter{
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    public boolean checkCurrentAvailability(Publication publication, Date currentDate) {
+        return false;
+    }
+
+    @Override
+>>>>>>> denizsen
     public ArrayList<Publication> listNegativelyRated() {
         return null;
     }
@@ -50,8 +68,13 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace, Filter{
         return false;
     }
 
+<<<<<<< HEAD
     @Override
     public ArrayList<Publication> filter(String filterType, String filterOptions) {
         return null;
     }
+=======
+
+
+>>>>>>> denizsen
 }
