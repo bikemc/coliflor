@@ -1,9 +1,15 @@
 package ProductManager.Product.BookRental;
 
-public class BookPublication {
+import RentalSystemManager.Product;
+import RentalSystemManager.Publication;
+
+import java.util.Date;
+
+public class BookPublication extends Publication {
     private int bookNumber;
 
-    public BookPublication(int bookNumber) {
+    public BookPublication(Product product, Date publicationDate, boolean currentlyAvailable, int id, int bookNumber) {
+        super(product, publicationDate, currentlyAvailable, id);
         this.bookNumber = bookNumber;
     }
 

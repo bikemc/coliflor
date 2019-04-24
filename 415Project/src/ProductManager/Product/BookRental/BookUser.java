@@ -1,9 +1,12 @@
 package ProductManager.Product.BookRental;
 
+import RentalSystemManager.*;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class BookUser {
+public class BookUser extends User {
 
     private ArrayList<Book> rentedBooks;
     private double fund;
@@ -11,7 +14,9 @@ public class BookUser {
     private List<Book> wishList;
     private int point;
 
-    public BookUser(ArrayList<Book> rentedBooks, double fund, List<Book> booksToRead, List<Book> wishList, int point) {
+
+    public BookUser(String name, String email, String address, String username, long phoneNumber, String password, Date birthday, ArrayList<Message> messages, ArrayList<Publication> rentalHistory, ArrayList<Publication> searchHistory, ArrayList<Review> reviews, ArrayList<Payment> payments, ArrayList<Book> rentedBooks, double fund, List<Book> booksToRead, List<Book> wishList, int point) {
+        super(name, email, address, username, phoneNumber, password, birthday, messages, rentalHistory, searchHistory, reviews, payments);
         this.rentedBooks = rentedBooks;
         this.fund = fund;
         this.booksToRead = booksToRead;

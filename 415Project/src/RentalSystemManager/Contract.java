@@ -1,5 +1,7 @@
 package RentalSystemManager;
 
+import java.util.Date;
+
 public abstract class Contract {
     private User user;
     private Publication publication;
