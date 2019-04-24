@@ -10,11 +10,7 @@ import java.util.List;
 /**
  * Created by pc on 24.04.2019.
  */
-<<<<<<< HEAD
 public class Place extends Product {
-=======
-public class Place extends Product{
->>>>>>> denizsen
     String location, placeName, view3DURL;
     ArrayList<String> services, purpose,
                       transportationOptions, photoURLs;
@@ -23,16 +19,7 @@ public class Place extends Product{
     ArrayList<Date> schedule;
     boolean currentAvailability;
 
-<<<<<<< HEAD
     public Place(double price, String description, boolean onRent, List<Review> reviews, String location, String placeName, String view3DURL, ArrayList<String> services, ArrayList<String> purpose, ArrayList<String> transportationOptions, ArrayList<String> photoURLs, int capacity, double rating, ArrayList<Date> schedule, boolean currentAvailability) {
-=======
-    public Place(double price, String description, boolean onRent,
-                 List<Review> reviews, String location, String placeName,
-                 String view3DURL, ArrayList<String> services,
-                 ArrayList<String> purpose, ArrayList<String> transportationOptions,
-                 ArrayList<String> photoURLs, int capacity, double rating,
-                 ArrayList<Date> schedule, boolean currentAvailability) {
->>>>>>> denizsen
         super(price, description, onRent, reviews);
         this.location = location;
         this.placeName = placeName;
