@@ -7,7 +7,7 @@ public class WorkLaborRental {
     private ArrayList<Employee> topWorkedList;
     private Map<String,Employee> workerOfTheMonth;
 
-    public WorkLaborRental(ArrayList<WorkLaborRental.Employee> topWorkedList, Map<String, WorkLaborRental.Employee> workerOfTheMonth) {
+    public WorkLaborRental(ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
         this.topWorkedList = topWorkedList;
         this.workerOfTheMonth = workerOfTheMonth;
     }
