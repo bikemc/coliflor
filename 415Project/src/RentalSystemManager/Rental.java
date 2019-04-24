@@ -56,4 +56,39 @@ public class Rental {
     public boolean checkCreaditCardInformation(long cardNo, String carName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
         return false;
     }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
+    public ArrayList<Publication> getPublications() {
+        return publications;
+    }
+
+    public void setPublications(ArrayList<Publication> publications) {
+        this.publications = publications;
+    }
+
+    public ArrayList<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(ArrayList<Payment> payments) {
+        this.payments = payments;
+    }
+
+    public ArrayList<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(ArrayList<Contract> contracts) {
+        this.contracts = contracts;
+    }
+
+
+
 }
