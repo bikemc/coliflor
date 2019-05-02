@@ -2,10 +2,7 @@ package ProductManager.Product.PlaceRental;
 
 import ProductManager.CommonalityManager.BookPlace.BookPlace;
 import ProductManager.CommonalityManager.WorkPlace.WorkPlace;
-import RentalSystemManager.Filter;
-import RentalSystemManager.Publication;
-import RentalSystemManager.Rental;
-import RentalSystemManager.User;
+import RentalSystemManager.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +11,10 @@ import java.util.Date;
  * Created by pc on 24.04.2019.
  */
 public class PlaceRental extends Rental implements BookPlace, WorkPlace, Filter{
+
+    public PlaceRental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts) {
+        super(users, publications, payments, contracts);
+    }
 
     public String getWeatherCondition(Place place, Date rentalDate){
 
