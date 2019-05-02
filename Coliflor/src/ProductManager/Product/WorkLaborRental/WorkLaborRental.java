@@ -2,10 +2,7 @@ package ProductManager.Product.WorkLaborRental;
 
 import ProductManager.CommonalityManager.BookWork.BookWork;
 import ProductManager.CommonalityManager.WorkPlace.WorkPlace;
-import RentalSystemManager.Filter;
-import RentalSystemManager.Publication;
-import RentalSystemManager.Rental;
-import RentalSystemManager.User;
+import RentalSystemManager.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +12,8 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace, Filte
     private ArrayList<Employee> topWorkedList;
     private Map<String,Employee> workerOfTheMonth;
 
-    public WorkLaborRental(ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+    public WorkLaborRental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts,ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+        super(users, publications, payments, contracts);
         this.topWorkedList = topWorkedList;
         this.workerOfTheMonth = workerOfTheMonth;
     }

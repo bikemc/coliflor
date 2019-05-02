@@ -2,16 +2,17 @@ package ProductManager.Product.BookRental;
 
 import ProductManager.CommonalityManager.BookPlace.BookPlace;
 import ProductManager.CommonalityManager.BookWork.BookWork;
-import RentalSystemManager.Filter;
-import RentalSystemManager.Publication;
-import RentalSystemManager.Rental;
-import RentalSystemManager.User;
+import RentalSystemManager.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class BookRental extends Rental implements BookWork, BookPlace, Filter {
+
+    public BookRental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts) {
+        super(users, publications, payments, contracts);
+    }
 
     public static void addFund(BookUser user, double amount){
 
