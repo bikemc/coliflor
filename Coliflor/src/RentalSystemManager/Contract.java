@@ -1,13 +1,6 @@
 package RentalSystemManager;
 import java.util.Date;
 
-import java.util.Date;
-
-<<<<<<< HEAD
-=======
-import java.util.Date;
-
->>>>>>> parent of 67a9b08... merge
 public abstract class Contract {
     private User user;
     private Publication publication;

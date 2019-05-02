@@ -13,11 +13,29 @@ public class Rental {
     private ArrayList<Payment> payments;
     private ArrayList<Contract> contracts;
 
-    public boolean login(String username, String password){
-        return true;
+    public Rental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts) {
+        this.users = users;
+        this.publications = publications;
+        this.payments = payments;
+        this.contracts = contracts;
     }
 
-    public boolean signup(String username, String password, String name, long phoneNo){
+    public boolean login(String username, String password){
+        for(int i=0; i<users.size(); i++){
+            if(users.get(i).getName().equals(username) && users.get(i).getPassword().equals(password)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
+        for(int i=0; i<users.size(); i++){
+            if(users.get(i).getName().equals(username))
+                return false;
+        }
+        User newUser = new User(name,email,address,username,phoneNo,password,birth,null,null,null,null,null);
+        users.add(newUser);
         return true;
     }
 
@@ -26,6 +44,7 @@ public class Rental {
     }
 
     public ArrayList<Publication> searchPublication(String searchKey, String userName){
+        
         return null;
     }
 
@@ -55,5 +74,37 @@ public class Rental {
 
     public boolean checkCreaditCardInformation(long cardNo, String carName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
         return false;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
+    public ArrayList<Publication> getPublications() {
+        return publications;
+    }
+
+    public void setPublications(ArrayList<Publication> publications) {
+        this.publications = publications;
+    }
+
+    public ArrayList<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(ArrayList<Payment> payments) {
+        this.payments = payments;
+    }
+
+    public ArrayList<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(ArrayList<Contract> contracts) {
+        this.contracts = contracts;
     }
 }
