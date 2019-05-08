@@ -5,9 +5,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.UiLoginSignup">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookLoginController">
    <children>
-      <Button layoutX="219.0" layoutY="193.0" mnemonicParsing="false" text="Login" />
+      <Button fx:id="bookLoginButton" onAction="#openBookMainPage" layoutX="219.0" layoutY="193.0" mnemonicParsing="false" text="Login" />
       <Button layoutX="214.0" layoutY="316.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" text="Signup" />
       <Text layoutX="214.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not have an account" wrappingWidth="246.205078125" />
       <Text layoutX="214.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="171.205078125" />

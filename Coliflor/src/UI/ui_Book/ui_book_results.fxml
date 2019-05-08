@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.UiBookResults">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookResultsController">
 <children>
     <Text layoutX="44.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Books">
         <font>
@@ -19,17 +19,17 @@
     </Text>
     <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="764.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="96.0" text="Back" />
-    <Button layoutX="242.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
-    <Button layoutX="242.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
+    <Button onAction="#backBookSearchPage" layoutX="764.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="96.0" text="Back" />
+    <Button onAction="#openBookDetailsPage" layoutX="242.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
+    <Button onAction="#openBookDetailsPage" layoutX="242.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
     <Text layoutX="242.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="77.99999266862869" />
     <Text layoutX="242.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="77.99999266862869" />
-    <Button layoutX="624.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" text="Back to MainPage" />
+    <Button onAction="#backBookMainPage" layoutX="624.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" text="Back to MainPage" />
       <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
       <Text layoutX="557.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text layoutX="557.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button layoutX="556.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
-      <Button layoutX="556.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
+      <Button onAction="#openBookDetailsPage" layoutX="556.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
+      <Button onAction="#openBookDetailsPage" layoutX="556.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
 </children>
 </AnchorPane>
