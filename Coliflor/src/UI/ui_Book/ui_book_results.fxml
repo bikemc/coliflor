@@ -18,12 +18,18 @@
         </font>
     </Text>
     <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
-    <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="764.0" layoutY="527.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="99.0" text="Back" />
+    <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
+    <Button layoutX="764.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="96.0" text="Back" />
     <Button layoutX="242.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
     <Button layoutX="242.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
     <Text layoutX="242.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="77.99999266862869" />
     <Text layoutX="242.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="77.99999266862869" />
-    <Button layoutX="585.0" layoutY="527.0" mnemonicParsing="false" text="Back to MainPage" />
+    <Button layoutX="624.0" layoutY="527.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" text="Back to MainPage" />
+      <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="557.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="557.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button layoutX="556.0" layoutY="237.0" mnemonicParsing="false" text="Details" />
+      <Button layoutX="556.0" layoutY="419.0" mnemonicParsing="false" text="Details" />
 </children>
 </AnchorPane>

@@ -13,7 +13,7 @@
 <children>
     <Text layoutX="46.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Search" wrappingWidth="234.25390625">
         <font>
-            <Font name="System Bold" size="34.0" />
+            <Font name="System Bold" size="30.0" />
         </font>
     </Text>
     <Text layoutX="46.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="74.1357421875">
@@ -30,7 +30,7 @@
             <Font name="System Bold" size="21.0" />
         </font>
     </Text>
-    <ChoiceBox fx:id="placeType" layoutX="156.0" layoutY="136.0" prefWidth="150.0" value="Novel">
+    <ChoiceBox fx:id="placeType" layoutX="156.0" layoutY="143.0" prefWidth="150.0" value="Novel">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Novel" />
@@ -44,7 +44,7 @@
     <Text layoutX="156.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="149.99999105930328" />
     <Button layoutX="745.0" layoutY="523.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="119.0" text="Back" />
     <Button layoutX="54.0" layoutY="451.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="119.0" text="Search" />
-      <CheckBox layoutX="47.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="170.0" text="Sort By Price">
+      <CheckBox layoutX="47.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="197.0" text="Sort By Price">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
