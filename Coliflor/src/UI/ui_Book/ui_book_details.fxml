@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.UiBookDetails">
+<children>
+    <Text layoutX="51.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details">
+        <font>
+            <Font name="System Bold" size="30.0" />
+        </font>
+    </Text>
+    <ImageView fitHeight="239.0" fitWidth="277.0" layoutX="51.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+    <Button layoutX="772.0" layoutY="525.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="96.0" text="Back" />
+    <Button layoutX="595.0" layoutY="528.0" mnemonicParsing="false" text="Back to MainPage" />
+    <Text layoutX="350.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+    <Text layoutX="350.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary:" />
+    <Text layoutX="473.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+    <Text layoutX="51.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Return Date:" />
+    <Text layoutX="211.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+    <Button layoutX="689.0" layoutY="204.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="178.0" text="Add to Wishlist" />
+    <Button layoutX="48.0" layoutY="426.0" mnemonicParsing="false" text="View Reviews" />
+    <Button layoutX="683.0" layoutY="253.0" mnemonicParsing="false" text="Share on social media" />
+    <Button layoutX="48.0" layoutY="486.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="131.0" text="Rent" />
+      <Text layoutX="350.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+      <Text layoutX="439.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button layoutX="228.0" layoutY="426.0" mnemonicParsing="false" text="Turn Over Contract" />
+</children>
+</AnchorPane>
