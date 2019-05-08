@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Place.UiPlaceRent">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Place.PlaceRentController">
    <children>
       <Text layoutX="46.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rent">
          <font>
@@ -16,6 +16,7 @@
       <CheckBox layoutX="46.0" layoutY="141.0" mnemonicParsing="false" text="By Hand" />
       <CheckBox layoutX="45.0" layoutY="194.0" mnemonicParsing="false" text="By Credit Card" />
       <Button layoutX="45.0" layoutY="372.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="57.0" text="Pay" />
-      <Button layoutX="781.0" layoutY="530.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" text="Back" />
+      <Button onAction="#backPlaceDetailsPage" layoutX="781.0" layoutY="530.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="79.0" text="Back" />
+      <Button onAction="#backPlaceMainPage" layoutX="631.0" layoutY="525.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="131.0" text="Back to MainPage" />
    </children>
 </AnchorPane>
