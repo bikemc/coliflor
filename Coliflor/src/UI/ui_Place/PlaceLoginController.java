@@ -11,7 +11,7 @@ public class PlaceLoginController {
 
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Place;
+    private Scene ui_Place, ui_MainPage;
 
     public Scene initializeScene(String fxmlName) throws java.io.IOException
     {
@@ -26,6 +26,15 @@ public class PlaceLoginController {
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_Place);
     }
+
+    public void backMainPage(ActionEvent event) throws Exception
+    {
+        ui_MainPage = initializeScene("../ui_MainPage.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_MainPage);
+    }
+
+
 
 
 

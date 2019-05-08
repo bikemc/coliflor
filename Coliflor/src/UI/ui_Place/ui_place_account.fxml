@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="UI.ui_Place.PlaceAccountController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Place.PlaceAccountController">
+
+
+    <children>
+        <Button onAction="#backPlaceMainPage" layoutX="685.0" layoutY="533.0" mnemonicParsing="false" text="Back to MainPage" />
+        <Text layoutX="80.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account">
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font></Text>
+        <Text layoutX="80.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+        <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:" />
+        <Text layoutX="80.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+        <Text layoutX="80.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
+        <Text layoutX="78.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />
+        <Text layoutX="188.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text layoutX="188.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text layoutX="188.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text layoutX="188.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text layoutX="188.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Button layoutX="672.0" layoutY="106.0" mnemonicParsing="false" text="Settings" />
+        <Button layoutX="672.0" layoutY="169.0" mnemonicParsing="false" text="Message with Company" />
+    </children>
 
 </AnchorPane>

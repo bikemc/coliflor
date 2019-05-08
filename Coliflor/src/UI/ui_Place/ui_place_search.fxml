@@ -4,6 +4,7 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -34,7 +35,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="placeType" layoutX="156.0" layoutY="143.0" prefWidth="150.0" value="Meeting Place">
+      <ChoiceBox fx:id="placeType" layoutX="156.0" layoutY="143.0" prefWidth="150.0" >
        <items>
            <FXCollections fx:factory="observableArrayList">
                <String fx:value="Meeting Place" />
@@ -44,7 +45,7 @@
            </FXCollections>
        </items>
       </ChoiceBox>
-      <ChoiceBox fx:id="placesSortedby" layoutX="156.0" layoutY="356.0" prefWidth="150.0" value="Price">
+      <ChoiceBox fx:id="placesSortedby" layoutX="156.0" layoutY="356.0" prefWidth="150.0" >
        <items>
            <FXCollections fx:factory="observableArrayList">
                <String fx:value="Price" />
@@ -52,9 +53,9 @@
            </FXCollections>
        </items>
    </ChoiceBox>
-      <Text layoutX="156.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="170.205078125" />
-      <Text layoutX="156.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="149.99999105930328" />
-      <Button onAction="#backMainPlacePage" layoutX="745.0" layoutY="523.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="119.0" text="Back" />
-      <Button onAction="#openPlaceResultPage" layoutX="46.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="119.0" text="Search" />
+      <Button layoutX="745.0" layoutY="523.0" mnemonicParsing="false" onAction="#backMainPlacePage" prefHeight="39.0" prefWidth="119.0" text="Back" />
+      <Button layoutX="46.0" layoutY="450.0" mnemonicParsing="false" onAction="#openPlaceResultPage" prefHeight="39.0" prefWidth="119.0" text="Search" />
+      <TextField layoutX="156.0" layoutY="214.0" prefHeight="39.0" prefWidth="150.0" />
+      <TextField layoutX="156.0" layoutY="280.0" prefHeight="39.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
