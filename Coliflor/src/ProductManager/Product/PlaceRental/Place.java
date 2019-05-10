@@ -126,4 +126,6 @@ public class Place extends Product{
     public void setCurrentAvailability(boolean currentAvailability) {
         this.currentAvailability = currentAvailability;
     }
+
+
 }

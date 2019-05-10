@@ -24,14 +24,4 @@ public class Employee extends Product {
         this.schedule = schedule;
     }
 
-    /*
-    public Employee(int age, int experiencedYears, ArrayList<String> occupation, String address, String employeeName, double rating, ArrayList<Date> schedule) {
-        this.age = age;
-        this.experiencedYears = experiencedYears;
-        this.occupation = occupation;
-        this.address = address;
-        this.employeeName = employeeName;
-        this.rating = rating;
-        this.schedule = schedule;
-    }*/
 }

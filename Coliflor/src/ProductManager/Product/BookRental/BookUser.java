@@ -63,4 +63,5 @@ public class BookUser extends User {
     public void setPoint(int point) {
         this.point = point;
     }
+
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 
-public class WorkLaborRental extends Rental implements BookWork,WorkPlace, Filter {
+public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
     private ArrayList<Employee> topWorkedList;
     private Map<String,Employee> workerOfTheMonth;
 
@@ -19,7 +19,9 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace, Filte
     }
 
     public void requestDiscount(WorkLaborUser user, Employee worker, double discountAmount){
+        if(Math.random() < 0.5){ // random olarak discountu kabul edip etmiyoruz
 
+        }
     }
 
     @Override
@@ -48,7 +50,17 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace, Filte
     }
 
     @Override
-    public ArrayList<Publication> filter(String filterType, String filterOptions) {
-        return null;
+    public ArrayList<Publication> filter(String filterType, Object... filterOptions) {
+
+        ArrayList<Publication> searchResult = new ArrayList<Publication>();
+        switch (filterType){
+            case FILTER_DESCRPTION:
+                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                break;
+
+        }
+
+
+        return searchResult;
     }
 }

@@ -20,5 +20,15 @@ public class BookPublication extends Publication {
     public void setBookNumber(int bookNumber) {
         this.bookNumber = bookNumber;
     }
+
+    @Override
+    public Product getProduct() {
+        return super.getProduct();
+    }
+
+    @Override
+    public void setProduct(Product product) {
+        super.setProduct(product);
+    }
 }
 
