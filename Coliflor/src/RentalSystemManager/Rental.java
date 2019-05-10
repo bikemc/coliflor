@@ -17,6 +17,7 @@ public class Rental implements Filter {
     protected ArrayList<Payment> payments;
     protected ArrayList<Contract> contracts;
     public static User currentUser = null;
+    public static final String FILTER_DESCRPTION = "desc";
 
 
     public Rental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts) {
@@ -81,14 +82,14 @@ public class Rental implements Filter {
         return searchResult;
     }
 
-    public boolean rent(User user, Publication publication){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
+    public boolean rent(User user, Publication publication,Date startDate, Date endDate){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
         if(currentUser != null) {
             for (int i = 0; i < publications.size(); i++) {
                 if(publications.get(i).equals( publication)) {
                     if (request(currentUser,publications.get(i).getProduct())){
                         publications.get(i).setCurrentlyAvailable(false);
                         publications.get(i).getProduct().setOnRent(true);
-                        if (pay(currentUser,publications.get(i))){
+                        if (pay(currentUser,publications.get(i),startDate, endDate)){
                             currentUser.getRentalHistory().add(publications.get(i));
                             return true;
                         }
@@ -119,22 +120,27 @@ public class Rental implements Filter {
         return false;
     }
 
-    public boolean pay(User user, Publication publication){
+    public boolean pay(User user, Publication publication, Date startDate, Date endDate){
         // user gereksiz
         if(currentUser != null) {
             if(checkCreaditCardInformation(8,null,null,0,0,0)) {
-                Payment pay = new Payment(currentUser, publication);
-                currentUser.getPayments().add(pay);
-                return true;
+                if(makeContract(publication,startDate,endDate) != null) {
+                    Payment pay = new Payment(currentUser, publication);
+                    currentUser.getPayments().add(pay);
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    public boolean checkCreaditCardInformation(long cardNo, String carName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
+    public boolean checkCreaditCardInformation(long cardNo, String cardName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
         return new Random().nextBoolean();
     }
 
+    public Contract makeContract(Publication publication,Date startDate, Date endDate, Object... contractTypes) {
+        return null;
+    }
     // getters and setters
     public ArrayList<User> getUsers() {
         return users;
@@ -168,12 +174,10 @@ public class Rental implements Filter {
         this.contracts = contracts;
     }
 
-    public static final String FILTER_DESCRPTION = "desc";
+
 
     @Override
     public ArrayList<Publication> filter(String filterType,Object...  filterOptions) {
-
-
         return null;
     }
 }

@@ -7,6 +7,6 @@ import java.security.PublicKey;
 import java.util.Date;
 
 public interface BookPlace {
-    public void shareInSocialMedia(User user, Publication publication, String socialMedia);
-    public boolean checkCurrentAvailability(Publication publication, Date currentDate);
+    public boolean shareInSocialMedia(User user, Publication publication, String socialMedia);
+    public boolean checkAvailability(Publication publication, Date date);
 }

@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class BookPublication extends Publication {
     private int bookNumber;
+    private BookRentalContract bookRentalContract;
 
     public BookPublication(Product product, Date publicationDate, boolean currentlyAvailable, int id, int bookNumber) {
         super(product, publicationDate, currentlyAvailable, id);
@@ -21,14 +22,12 @@ public class BookPublication extends Publication {
         this.bookNumber = bookNumber;
     }
 
-    @Override
-    public Product getProduct() {
-        return super.getProduct();
+    public BookRentalContract getBookRentalContract() {
+        return bookRentalContract;
     }
 
-    @Override
-    public void setProduct(Product product) {
-        super.setProduct(product);
+    public void setBookRentalContract(BookRentalContract bookRentalContract) {
+        this.bookRentalContract = bookRentalContract;
     }
 }
 
