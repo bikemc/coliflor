@@ -64,7 +64,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     public ArrayList<PublicationT> searchPublication(String searchKey){
         ArrayList<PublicationT> searchResult = new ArrayList<>();
         for(int i=0; i<publications.size(); i++){
-            if((publications.get(i)).getProduct().getDescription().contains(searchKey)){
+            if(publications.get(i).getTitle().contains(searchKey)){
                 searchResult.add(publications.get(i));
                 if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
                 currentUser.getSearchHistory().add(publications.get(i));

@@ -59,6 +59,14 @@ public class Publication {
         return contract;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public void setContract(Contract contract) {
         this.contract = contract;
     }
