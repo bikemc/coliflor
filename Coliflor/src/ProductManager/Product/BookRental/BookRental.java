@@ -18,10 +18,22 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
         super(users, publications, products, payments, contracts);
     }
 
-    public  void addFund(double amount){
+    public boolean addFund(double amount){
         if(currentUser!= null){
-            currentUser.setFund((currentUser).getFund()+ amount);
+            if(checkCreaditCardInformation(8,null,null,0,0,0)) {
+                    currentUser.setFund((currentUser).getFund()+ amount);
+                    return true;
+                }
+            }
+        return false;
+    }
+    public boolean addToWishlist(Book book){
+        if(currentUser!= null){
+            if(currentUser.getWishList()== null) currentUser.setWishList(new ArrayList<Book>());
+                currentUser.getWishList().add(book);
+                return true;
         }
+        return false;
     }
     public  boolean penaltyPayment(BookPublication publication, Date endDate){
         Date currentDate = new Date();
