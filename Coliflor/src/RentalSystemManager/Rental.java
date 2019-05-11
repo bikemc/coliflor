@@ -98,6 +98,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
                         (publications.get(i)).setCurrentlyAvailable(false);
                         (publications.get(i)).getProduct().setOnRent(true);
                         if (pay(publications.get(i),startDate, endDate)){
+                            if(currentUser.getRentalHistory()== null)  currentUser.setRentalHistory(new ArrayList<Publication>());
                             currentUser.getRentalHistory().add( publications.get(i));
                             return true;
                         }

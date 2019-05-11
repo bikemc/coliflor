@@ -47,21 +47,26 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
 
     @Override
     public String meetingLocation (User user, Product book){
+        if(currentUser != null) {
         if(currentUser.getAddress().equals(((Book)book).getAddress()))  {
             return currentUser.getAddress();
+        }
         }
         return null;
     }
 
     @Override
     public ArrayList<Publication> giveRecommendation() {
-        Random rand = new Random();
-        ArrayList<Publication> recomendationList= new ArrayList<>();
-        int randomIndex = rand.nextInt(publications.size());
-        for (int i=0; i < randomIndex; i++){
-            recomendationList.add(publications.get(rand.nextInt(publications.size())));
+        if(currentUser != null) {
+            Random rand = new Random();
+            ArrayList<Publication> recomendationList = new ArrayList<>();
+            int randomIndex = rand.nextInt(publications.size());
+            for (int i = 0; i < randomIndex; i++) {
+                recomendationList.add(publications.get(rand.nextInt(publications.size())));
+            }
+            return recomendationList;
         }
-        return recomendationList;
+        return null;
     }
 
     @Override
