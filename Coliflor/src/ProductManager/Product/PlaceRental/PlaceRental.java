@@ -2,6 +2,7 @@ package ProductManager.Product.PlaceRental;
 
 import ProductManager.CommonalityManager.BookPlace.BookPlace;
 import ProductManager.CommonalityManager.WorkPlace.WorkPlace;
+import ProductManager.Product.WorkLaborRental.WorkLaborRental;
 import RentalSystemManager.*;
 
 import java.util.ArrayList;
@@ -11,10 +12,10 @@ import java.util.Date;
 /**
  * Created by pc on 24.04.2019.
  */
-public class PlaceRental extends Rental implements BookPlace, WorkPlace{
+public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRentalContract>  implements BookPlace, WorkPlace<Place>{
 
-    public PlaceRental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts) {
-        super(users, publications, payments, contracts);
+    public PlaceRental(ArrayList<PlaceUser> users, ArrayList<Publication> publications, ArrayList<Place> products, ArrayList<Payment> payments, ArrayList<PlaceRentalContract> contracts) {
+        super(users, publications, products, payments, contracts);
     }
 
     public String getWeatherCondition(Place place, Date rentalDate){
@@ -34,7 +35,7 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace{
         ArrayList<Publication> searchResult = new ArrayList<Publication>();
         switch (filterType){
             case FILTER_DESCRPTION:
-                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                searchResult =  super.searchPublication((String)filterOptions[0]);
             break;
 
             case PLACE_FILTER_LOCATION:
@@ -71,22 +72,28 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace{
         }
 
     @Override
-    public boolean shareInSocialMedia(User user, Publication publication, String socialMedia) {
+    public boolean shareInSocialMedia(Publication publication, String socialMedia) {
         return true;
+    }
+    @Override
+    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo) {
+        if(super.signup(username, email, address, password, birth, name, phoneNo)) {
+            PlaceUser newUser = new PlaceUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null);
+            users.add(newUser);
+            currentUser = newUser; // konuşalım grupça
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public ArrayList<Product> listPositivelyRated() {
+    public ArrayList<Place> listPositivelyRated() {
         ArrayList<Place> positivelyRated = new ArrayList<>();
-        ArrayList<Product> positivelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             positivelyRated.add((Place) products.get(i));
         }
         Collections.sort(positivelyRated);
-        for (int i = 0; i < positivelyRated.size(); i++) {
-            positivelyRatedProduct.add((Product)positivelyRated.get(i));
-        }
-        return positivelyRatedProduct;
+        return positivelyRated;
     }
 
     @Override
@@ -101,18 +108,14 @@ public class PlaceRental extends Rental implements BookPlace, WorkPlace{
     }
 
     @Override
-    public ArrayList<Product> listNegativelyRated() {
+    public ArrayList<Place> listNegativelyRated() {
         ArrayList<Place> negativelyRated = new ArrayList<>();
-        ArrayList<Product>  negativelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             negativelyRated.add((Place) products.get(i));
         }
         Collections.sort( negativelyRated);
         Collections.reverse( negativelyRated);
-        for (int i = 0; i <  negativelyRated.size(); i++) {
-            negativelyRatedProduct.add((Product) negativelyRated.get(i));
-        }
-        return  negativelyRatedProduct;
+        return  negativelyRated;
     }
 
     @Override

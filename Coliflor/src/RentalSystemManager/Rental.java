@@ -9,20 +9,36 @@ import java.util.Scanner;
 /**
  * Created by pc on 24.04.2019.
  */
-public class Rental implements Filter {
+public class Rental<ProductT extends Product, UserT extends User, PublicationT extends Publication, ContractT extends Contract> implements Filter {
 
-
+    protected ArrayList<UserT> users;
+    protected ArrayList<PublicationT> publications;
+    protected ArrayList<ProductT> products;
     protected ArrayList<Payment> payments;
+    protected ArrayList<ContractT> contracts;
+    public UserT currentUser = null;
     public static final String FILTER_DESCRPTION = "desc";
 
 
-    public Rental() {
+    public Rental(ArrayList<UserT> users, ArrayList<PublicationT> publications, ArrayList<ProductT> products, ArrayList<Payment> payments, ArrayList<ContractT> contracts) {
+        this.users = users;
+        this.products = products;
+        this.publications = publications;
+        this.payments = payments;
+        this.contracts = contracts;
+   }
 
+    public UserT getCurrentUser() {
+        return currentUser;
     }
 
-    public boolean login(String username, String password, ArrayList<? extends User> users, User currentUser){
+    public void setCurrentUser(UserT currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public boolean login(String username, String password){
         for(int i=0; i<users.size(); i++){
-            if(users.get(i).getUsername().equals(username) && users.get(i).getPassword().equals(password)){
+            if((users.get(i)).getName().equals(username) && (users.get(i)).getPassword().equals(password)){
                 currentUser = users.get(i);
                 return true;
             }
@@ -30,31 +46,33 @@ public class Rental implements Filter {
         return false;
     }
 
-    public boolean signup(ArrayList<? extends User> users, User currentUser, String username, String email, String address, String password, Date birth, String name, long phoneNo){
+    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
         for(int i=0; i<users.size(); i++){
-            if(users.get(i).getUsername().equals(username))
+            if((users.get(i)).getName().equals(username))
                 return false;
         }
+
         return true;
     }
 
-    public void logout(User currentUser){
+    public void logout(UserT user){
         if(currentUser != null) {
             currentUser = null;
         }
     }
 
-    public ArrayList<Publication> searchPublication(String searchKey, ArrayList<? extends Publication> publications){ // user gereksiz bence
-        ArrayList<Publication> searchResult = new ArrayList<>();
+    public ArrayList<PublicationT> searchPublication(String searchKey){
+        ArrayList<PublicationT> searchResult = new ArrayList<>();
         for(int i=0; i<publications.size(); i++){
-            if(publications.get(i).getProduct().getDescription().contains(searchKey)){
+
+            if((publications.get(i)).getProduct().getDescription().contains(searchKey)){
                 searchResult.add(publications.get(i));
             }
         }
         return searchResult;
     }
 
-    public boolean sendMessage(User currentUser, String messageContent){ // user gereksiz bence
+    public boolean sendMessage(String messageContent){
         if(currentUser != null) {
             currentUser.sendMessage(messageContent);
             return true;
@@ -62,25 +80,25 @@ public class Rental implements Filter {
         return false;
     }
 
-    public ArrayList<Product> searchProduct(String searchKey, ArrayList<? extends Product> products){
-        ArrayList<Product> searchResult = new ArrayList<Product>();
+    public ArrayList<ProductT> searchProduct(String searchKey, String username){
+        ArrayList<ProductT> searchResult = new ArrayList<>();
         for(int i=0; i<products.size(); i++){
-            if(products.get(i).getDescription().contains(searchKey)){
+            if((products.get(i)).getDescription().contains(searchKey)){
                 searchResult.add(products.get(i));
             }
         }
         return searchResult;
     }
 
-    public boolean rent(User currentUser,ArrayList<? extends Publication> publications, Publication publication,Date startDate, Date endDate){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
+    public boolean rent(UserT user, PublicationT publication,Date startDate, Date endDate){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
         if(currentUser != null) {
             for (int i = 0; i < publications.size(); i++) {
                 if(publications.get(i).equals( publication)) {
-                    if (request(currentUser,publications.get(i).getProduct(), publications)){
-                        publications.get(i).setCurrentlyAvailable(false);
-                        publications.get(i).getProduct().setOnRent(true);
-                        if (pay(currentUser,publications.get(i),startDate, endDate)){
-                            currentUser.getRentalHistory().add(publications.get(i));
+                    if (request((publications.get(i)).getProduct())){
+                        (publications.get(i)).setCurrentlyAvailable(false);
+                        (publications.get(i)).getProduct().setOnRent(true);
+                        if (pay(publications.get(i),startDate, endDate)){
+                            currentUser.getRentalHistory().add( publications.get(i));
                             return true;
                         }
                     }
@@ -90,7 +108,7 @@ public class Rental implements Filter {
         return false;
     }
 
-    public void changeAccountInformation(User currentUser, String name, String password, Date birthDay, long phone, String username){ // username e gerek yok
+    public void changeAccountInformation(String name, String password, Date birthDay, long phone){
         if(currentUser != null) {
             currentUser.setName(name);
             currentUser.setPassword(password);
@@ -99,10 +117,10 @@ public class Rental implements Filter {
         }
     }
 
-    public boolean request(User currentUser, Product product,ArrayList<? extends Publication> publications){
+    public boolean request(Product product){
         if(currentUser != null) {
             for (int i = 0; i < publications.size(); i++) {
-                if(publications.get(i).getProduct().equals( product ) && !(publications.get(i).getProduct().isOnRent()) && (publications.get(i).isCurrentlyAvailable())){
+                if((publications.get(i)).getProduct().equals( product ) && !((publications.get(i)).getProduct().isOnRent()) && ((publications.get(i)).isCurrentlyAvailable())){
                     return true;
                 }
             }
@@ -110,13 +128,13 @@ public class Rental implements Filter {
         return false;
     }
 
-    public boolean pay(User currentUser, Publication publication, Date startDate, Date endDate){
+    public boolean pay(PublicationT publication, Date startDate, Date endDate){
         // user gereksiz
         if(currentUser != null) {
             if(checkCreaditCardInformation(8,null,null,0,0,0)) {
-                if(makeContract(publication,startDate,endDate) != null) {
-                    Payment pay = new Payment(currentUser, publication);
-                    currentUser.getPayments().add(pay);
+                if(makeContract( publication,startDate,endDate) != null) {
+                    Payment pay = new Payment(currentUser,  publication);
+                    (currentUser).getPayments().add(pay);
                     return true;
                 }
             }
@@ -131,9 +149,43 @@ public class Rental implements Filter {
     public Contract makeContract(Publication publication,Date startDate, Date endDate, Object... contractTypes) {
         return null;
     }
+    // getters and setters
+    public ArrayList<UserT> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<UserT> users) {
+        this.users = users;
+    }
+
+    public ArrayList<PublicationT> getPublications() {
+        return publications;
+    }
+
+    public void setPublications(ArrayList<PublicationT> publications) {
+        this.publications = publications;
+    }
+
+    public ArrayList<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(ArrayList<Payment> payments) {
+        this.payments = payments;
+    }
+
+    public ArrayList<ContractT> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(ArrayList<ContractT> contracts) {
+        this.contracts = contracts;
+    }
+
+
 
     @Override
-    public ArrayList<Publication> filter(String filterType,Object...  filterOptions) {
+    public ArrayList<PublicationT> filter(String filterType,Object...  filterOptions) {
         return null;
     }
 }

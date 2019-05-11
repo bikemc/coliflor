@@ -1,4 +1,3 @@
-/*
 package ProductManager.Product.WorkLaborRental;
 
 import ProductManager.CommonalityManager.BookWork.BookWork;
@@ -9,7 +8,7 @@ import java.util.*;
 
 import static ProductManager.Product.BookRental.BookRental.AUTHOR_FILTER;
 
-public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
+public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication, WorkLaborRentalContract> implements BookWork,WorkPlace<Employee> {
     private ArrayList<Employee> topWorkedList;
     private Map<String,Employee> workerOfTheMonth;
 
@@ -18,8 +17,8 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
     public static final String RATING_FILTER = "rating";
     public static final String EMPLOYEE_FILTER= "name";
 
-    public WorkLaborRental(ArrayList<User> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<Contract> contracts,ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
-        super(users, publications, payments, contracts);
+    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts, ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+        super(users, publications, products, payments, contracts);
         this.topWorkedList = topWorkedList;
         this.workerOfTheMonth = workerOfTheMonth;
     }
@@ -29,7 +28,7 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
     }
 
     @Override
-    public ArrayList<Publication> giveRecommendation(User user) {
+    public ArrayList<Publication> giveRecommendation() {
         Random rand = new Random();
         ArrayList<Publication> recomendationList = new ArrayList<>();
         int randomIndex = rand.nextInt(publications.size());
@@ -45,34 +44,35 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
         }
         return null;
     }
-
     @Override
-    public ArrayList<Product> listPositivelyRated() {
+    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo) {
+        if(super.signup(username, email, address, password, birth, name, phoneNo)) {
+            WorkLaborUser newUser = new WorkLaborUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null);
+            users.add(newUser);
+            currentUser = newUser; // konuşalım grupça
+            return true;
+        }
+        return false;
+    }
+    @Override
+    public ArrayList<Employee> listPositivelyRated() {
         ArrayList<Employee> positivelyRated = new ArrayList<>();
-        ArrayList<Product> positivelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             positivelyRated.add((Employee) products.get(i));
         }
         Collections.sort(positivelyRated);
-        for (int i = 0; i < positivelyRated.size(); i++) {
-            positivelyRatedProduct.add((Product)positivelyRated.get(i));
-        }
-        return positivelyRatedProduct;
+        return positivelyRated;
     }
 
     @Override
-    public ArrayList<Product> listNegativelyRated() {
+    public ArrayList<Employee> listNegativelyRated() {
         ArrayList<Employee> negativelyRated = new ArrayList<>();
-        ArrayList<Product>  negativelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             negativelyRated.add((Employee) products.get(i));
         }
         Collections.sort( negativelyRated);
         Collections.reverse( negativelyRated);
-        for (int i = 0; i <  negativelyRated.size(); i++) {
-            negativelyRatedProduct.add((Product) negativelyRated.get(i));
-        }
-     return  negativelyRatedProduct;
+     return  negativelyRated;
     }
 
     @Override
@@ -96,7 +96,7 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
         ArrayList<Publication> searchResult = new ArrayList<Publication>();
         switch (filterType){
             case FILTER_DESCRPTION:
-                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                searchResult =  super.searchPublication((String)filterOptions[0]);
                 break;
             case EXPERIENCE_YEAR_FILTER:
                 int lowerBound = (int)filterOptions[0];
@@ -141,4 +141,3 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
         return contract;
     }
 }
-*/
