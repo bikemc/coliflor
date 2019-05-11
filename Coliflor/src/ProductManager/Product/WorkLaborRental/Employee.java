@@ -2,7 +2,6 @@ package ProductManager.Product.WorkLaborRental;
 import RentalSystemManager.Product;
 import RentalSystemManager.Review;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Product {
-    private String title;
     private double price;
     private String description;
     private boolean onRent;
@@ -13,6 +12,7 @@ public abstract class Product {
     protected int id;
 
     public Product(double price, String description, boolean onRent, ArrayList<Review> reviews, int id) {
+
         this.price = price;
         this.description = description;
         this.onRent = onRent;
@@ -64,11 +64,4 @@ public abstract class Product {
         this.reviews = reviews;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }
