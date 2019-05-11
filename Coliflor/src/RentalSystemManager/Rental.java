@@ -38,7 +38,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
 
     public boolean login(String username, String password){
         for(int i=0; i<users.size(); i++){
-            if((users.get(i)).getName().equals(username) && (users.get(i)).getPassword().equals(password)){
+            if((users.get(i)).getUsername().equals(username) && (users.get(i)).getPassword().equals(password)){
                 currentUser = users.get(i);
                 return true;
             }
@@ -48,7 +48,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
 
     public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
         for(int i=0; i<users.size(); i++){
-            if((users.get(i)).getName().equals(username))
+            if((users.get(i)).getUsername().equals(username))
                 return false;
         }
 
