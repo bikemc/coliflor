@@ -38,7 +38,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     public  boolean penaltyPayment(BookPublication publication, Date endDate){
         Date currentDate = new Date();
         int dayDifference= (int)( (currentDate.getTime() - endDate.getTime()) / (1000 * 60 * 60 * 24));
-        double amount= publication.getBookRentalContract().getPenaltyPerDay()* dayDifference;
+        double amount= ((BookRentalContract)publication.getContract()).getPenaltyPerDay()* dayDifference;
         if((currentUser).getFund() >= amount){
             (currentUser).setFund((currentUser).getFund()- amount);
             return true;
@@ -51,18 +51,18 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
         return publications;
     }
     public Date getReturnDate(BookPublication publication){
-        return  publication.getBookRentalContract().getEndDate();
+        return  ((BookRentalContract)publication.getContract()).getEndDate();
     }
     public BookRentalContract getTurnOverContract(BookPublication publication){
-        return publication.getBookRentalContract();
+        return ((BookRentalContract)publication.getContract());
     }
 
     @Override
-    public String meetingLocation (User user, Product book){
+    public String meetingLocation (Product book){
         if(currentUser != null) {
-        if(currentUser.getAddress().equals(((Book)book).getAddress()))  {
-            return currentUser.getAddress();
-        }
+            if(currentUser.getAddress().equals(((Book)book).getAddress()))  {
+                return currentUser.getAddress();
+            }
         }
         return null;
     }
@@ -88,10 +88,14 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
 
     @Override
     public boolean checkAvailability(Publication publication, Date currentDate) {
-        if(publication.getProduct().isOnRent()){
-            return false;
+        for (Publication item: publications){
+            if(item.equals(publication)){
+                if(!(publication.getProduct().isOnRent()) && item.isCurrentlyAvailable()){
+                    return true;
+                }
+            }
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -111,7 +115,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
             if(currentUser.getFund() >= publication.getProduct().getPrice()) {
                 if(makeContract( publication,startDate,endDate) != null) {
                     Payment pay = new Payment(currentUser,  publication);
-                    (currentUser).getPayments().add(pay);
+                    currentUser.getPayments().add(pay);
                     return true;
                 }
             }
@@ -128,7 +132,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     @Override
     public boolean rent(BookUser user, BookPublication publication, Date startDate, Date endDate) {
         if( super.rent(user, publication, startDate, endDate)) {
-            ( currentUser).setPoint(( currentUser).getPoint() + ((Book) publication.getProduct()).getPoint());
+            currentUser.setPoint(currentUser.getPoint() + ((Book) publication.getProduct()).getPoint());
             return true;
         }
         return false;

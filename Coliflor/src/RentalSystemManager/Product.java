@@ -1,5 +1,7 @@
 package RentalSystemManager;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Product {
@@ -7,10 +9,10 @@ public abstract class Product {
     private double price;
     private String description;
     private boolean onRent;
-    private List<Review> reviews;
+    private ArrayList<Review> reviews;
     protected int id;
 
-    public Product(double price, String description, boolean onRent, List<Review> reviews, int id) {
+    public Product(double price, String description, boolean onRent, ArrayList<Review> reviews, int id) {
         this.price = price;
         this.description = description;
         this.onRent = onRent;
@@ -58,7 +60,7 @@ public abstract class Product {
         return reviews;
     }
 
-    public void setReviews(List<Review> reviews) {
+    public void setReviews(ArrayList<Review> reviews) {
         this.reviews = reviews;
     }
 

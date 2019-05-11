@@ -10,21 +10,25 @@ import static ProductManager.Product.BookRental.BookRental.AUTHOR_FILTER;
 
 public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication, WorkLaborRentalContract> implements BookWork,WorkPlace<Employee> {
     private ArrayList<Employee> topWorkedList;
-    private Map<String,Employee> workerOfTheMonth;
+    private Employee workerOfTheMonth;
 
     public static final String EXPERIENCE_YEAR_FILTER= "experience";
     public static final String  OCCUPATION_FILTER = "occupation";
     public static final String RATING_FILTER = "rating";
     public static final String EMPLOYEE_FILTER= "name";
 
-    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts, ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts) {
         super(users, publications, products, payments, contracts);
-        this.topWorkedList = topWorkedList;
-        this.workerOfTheMonth = workerOfTheMonth;
+        setTopWorkedList();
+        setWorkerOfTheMonth();
     }
 
     public boolean requestDiscount(WorkLaborUser user, Employee worker, double discountAmount){
-        return new Random().nextBoolean();
+       if(new Random().nextBoolean()){
+           worker.setPrice(worker.getPrice()- discountAmount);
+           return true;
+       }
+       return false;
     }
 
     @Override
@@ -38,8 +42,8 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
         return recomendationList;
     }
     @Override
-    public String meetingLocation (User user, Product book){
-        if(currentUser.getAddress().equals(((Employee)book).getAddress()))  {
+    public String meetingLocation (Product employee){
+        if(currentUser.getAddress().equals(((Employee)employee).getAddress()))  {
             return currentUser.getAddress();
         }
         return null;
@@ -84,10 +88,30 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
     public boolean payDeposit(User user, Publication publication) {
         if(currentUser != null) {
             if(checkCreaditCardInformation(8,null,null,0,0,0)) {
+                publication.getProduct().setPrice(publication.getProduct().getPrice()- ((WorkLaborRentalContract)publication.getContract()).getDeposit());
                 return true;
             }
         }
         return false;
+    }
+
+    public ArrayList<Employee> getTopWorkedList() {
+        return topWorkedList;
+    }
+
+
+    public void setTopWorkedList() {
+        Collections.sort(products);
+        this.topWorkedList = products;
+    }
+
+    public Employee getWorkerOfTheMonth() {
+        return workerOfTheMonth;
+    }
+
+    public void setWorkerOfTheMonth() {
+        Collections.sort(products);
+        this.workerOfTheMonth = products.get(0);
     }
 
     @Override
