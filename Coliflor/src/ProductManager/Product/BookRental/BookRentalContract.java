@@ -9,7 +9,6 @@ import java.util.Date;
 public class BookRentalContract extends Contract {
     private double penaltyPerDay;
     private boolean cargoDelivery;
-
     public BookRentalContract(User user, Publication publication, Date startDate, Date endDate, double penaltyPerDay, boolean cargoDelivery) {
         super(user, publication, startDate, endDate);
         this.penaltyPerDay = penaltyPerDay;
@@ -31,4 +30,5 @@ public class BookRentalContract extends Contract {
     public void setCargoDelivery(boolean cargoDelivery) {
         this.cargoDelivery = cargoDelivery;
     }
+
 }

@@ -1,7 +1,9 @@
 package RentalSystemManager;
+import java.io.Serializable;
 import java.util.*;
 
-public class User {
+
+public class User implements Serializable {
 
     //Variables
     private String name;
@@ -134,12 +136,15 @@ public class User {
 
     public void sendMessage(String messageContent)
     {
-
+        Date currentDate = new Date();
+        Message newMessage = new Message(currentDate, this, messageContent);
+        messages.add(newMessage);
     }
 
     //Return'nune dikkat
     public boolean placeRentalRequest(Product product)
-    {
+    { // bu olmamalı burda her user type erişebiliyo
+
         return true;
     }
 }

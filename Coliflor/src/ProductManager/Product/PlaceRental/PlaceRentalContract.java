@@ -25,4 +25,5 @@ public class PlaceRentalContract extends Contract{
     public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
+
 }
