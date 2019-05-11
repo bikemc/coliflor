@@ -139,6 +139,19 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     }
 
     @Override
+    public ArrayList<Book> searchProduct(String searchKey) {
+        ArrayList<Book> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(((Book)publications.get(i).getProduct()).getBookTitle().contains(searchKey)){
+                searchResult.add(products.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
+    }
+
+    @Override
     public ArrayList<BookPublication> filter(String filterType, Object... filterOptions) {
         ArrayList<BookPublication> searchResult = new ArrayList<>();
         switch (filterType){

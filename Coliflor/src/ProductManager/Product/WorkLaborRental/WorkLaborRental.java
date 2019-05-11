@@ -99,6 +99,18 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
         return topWorkedList;
     }
 
+    @Override
+    public ArrayList<Employee> searchProduct(String searchKey) {
+        ArrayList<Employee> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(((Employee)publications.get(i).getProduct()).getEmployeeName().contains(searchKey)){
+                searchResult.add(products.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
+    }
 
     public void setTopWorkedList() {
         Collections.sort(products);

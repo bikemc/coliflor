@@ -133,6 +133,19 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
         return false;
     }
 
+    @Override
+    public ArrayList<Place> searchProduct(String searchKey) {
+        ArrayList<Place> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(((Place)publications.get(i).getProduct()).getPlaceName().contains(searchKey)){
+                searchResult.add(products.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
+    }
+
 
     @Override
     public Contract makeContract(Publication publication,Date startDate, Date endDate, Object... contractTypes) {
