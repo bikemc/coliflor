@@ -7,6 +7,6 @@ import RentalSystemManager.User;
 import java.util.ArrayList;
 
 public interface BookWork {
-    public ArrayList<Publication> giveRecommendation(User user);
+    public ArrayList<Publication> giveRecommendation();
     public String meetingLocation (User user, Product p);
 }

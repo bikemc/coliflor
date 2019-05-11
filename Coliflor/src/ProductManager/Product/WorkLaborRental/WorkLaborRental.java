@@ -1,3 +1,4 @@
+/*
 package ProductManager.Product.WorkLaborRental;
 
 import ProductManager.CommonalityManager.BookWork.BookWork;
@@ -140,3 +141,4 @@ public class WorkLaborRental extends Rental implements BookWork,WorkPlace {
         return contract;
     }
 }
+*/
