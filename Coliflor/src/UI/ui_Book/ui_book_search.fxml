@@ -6,13 +6,18 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookSearchController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookSearchController">
 <children>
-    <Text layoutX="46.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Search" wrappingWidth="234.25390625">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+
+    <Text fill="white" layoutX="46.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Search" wrappingWidth="234.25390625">
         <font>
             <Font name="System Bold" size="30.0" />
         </font>
@@ -50,5 +55,11 @@
       </CheckBox>
       <TextField layoutX="156.0" layoutY="209.0" prefHeight="39.0" prefWidth="150.0" />
       <TextField layoutX="156.0" layoutY="280.0" prefHeight="39.0" prefWidth="150.0" />
+    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+    <ImageView fitHeight="107.0" fitWidth="93.0" layoutX="244.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../Images/bookrental.png" />
+        </image>
+    </ImageView>
 </children>
 </AnchorPane>
