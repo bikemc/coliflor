@@ -17,8 +17,8 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
     public static final String RATING_FILTER = "rating";
     public static final String EMPLOYEE_FILTER= "name";
 
-    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts,ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
-        super(users, publications, payments, contracts);
+    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts, ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+        super(users, publications, products, payments, contracts);
         this.topWorkedList = topWorkedList;
         this.workerOfTheMonth = workerOfTheMonth;
     }
@@ -28,7 +28,7 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
     }
 
     @Override
-    public ArrayList<Publication> giveRecommendation(User user) {
+    public ArrayList<Publication> giveRecommendation() {
         Random rand = new Random();
         ArrayList<Publication> recomendationList = new ArrayList<>();
         int randomIndex = rand.nextInt(publications.size());
@@ -95,7 +95,7 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
         ArrayList<Publication> searchResult = new ArrayList<Publication>();
         switch (filterType){
             case FILTER_DESCRPTION:
-                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                searchResult =  super.searchPublication((String)filterOptions[0]);
                 break;
             case EXPERIENCE_YEAR_FILTER:
                 int lowerBound = (int)filterOptions[0];

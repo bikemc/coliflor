@@ -20,9 +20,9 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     public static final String FILTER_DESCRPTION = "desc";
 
 
-    public Rental(ArrayList<UserT> users, ArrayList<PublicationT> publications, ArrayList<Payment> payments, ArrayList<ContractT> contracts) {
+    public Rental(ArrayList<UserT> users, ArrayList<PublicationT> publications, ArrayList<ProductT> products, ArrayList<Payment> payments, ArrayList<ContractT> contracts) {
         this.users = users;
-        if (users == null) System.out.println("null");
+        this.products = products;
         this.publications = publications;
         this.payments = payments;
         this.contracts = contracts;
@@ -61,7 +61,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         }
     }
 
-    public ArrayList<PublicationT> searchPublication(String searchKey, String userName){ // user gereksiz bence
+    public ArrayList<PublicationT> searchPublication(String searchKey){
         ArrayList<PublicationT> searchResult = new ArrayList<>();
         for(int i=0; i<publications.size(); i++){
 
@@ -72,9 +72,9 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return searchResult;
     }
 
-    public boolean sendMessage(UserT user, String messageContent){ // user gereksiz bence
+    public boolean sendMessage(String messageContent){
         if(currentUser != null) {
-            (currentUser).sendMessage(messageContent);
+            currentUser.sendMessage(messageContent);
             return true;
         }
         return false;
@@ -94,11 +94,11 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         if(currentUser != null) {
             for (int i = 0; i < publications.size(); i++) {
                 if(publications.get(i).equals( publication)) {
-                    if (request(currentUser,(publications.get(i)).getProduct())){
+                    if (request((publications.get(i)).getProduct())){
                         (publications.get(i)).setCurrentlyAvailable(false);
                         (publications.get(i)).getProduct().setOnRent(true);
-                        if (pay(currentUser, publications.get(i),startDate, endDate)){
-                            (currentUser).getRentalHistory().add( publications.get(i));
+                        if (pay(publications.get(i),startDate, endDate)){
+                            currentUser.getRentalHistory().add( publications.get(i));
                             return true;
                         }
                     }
@@ -108,16 +108,16 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public void changeAccountInformation(String name, String password, Date birthDay, long phone, String username){ // username e gerek yok
+    public void changeAccountInformation(String name, String password, Date birthDay, long phone){
         if(currentUser != null) {
-            (currentUser).setName(name);
-            (currentUser).setPassword(password);
-            (currentUser).setBirthday(birthDay);
-            (currentUser).setPhoneNumber(phone);
+            currentUser.setName(name);
+            currentUser.setPassword(password);
+            currentUser.setBirthday(birthDay);
+            currentUser.setPhoneNumber(phone);
         }
     }
 
-    public boolean request(UserT user, Product product){
+    public boolean request(Product product){
         if(currentUser != null) {
             for (int i = 0; i < publications.size(); i++) {
                 if((publications.get(i)).getProduct().equals( product ) && !((publications.get(i)).getProduct().isOnRent()) && ((publications.get(i)).isCurrentlyAvailable())){
@@ -128,7 +128,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public boolean pay(UserT user, PublicationT publication, Date startDate, Date endDate){
+    public boolean pay(PublicationT publication, Date startDate, Date endDate){
         // user gereksiz
         if(currentUser != null) {
             if(checkCreaditCardInformation(8,null,null,0,0,0)) {

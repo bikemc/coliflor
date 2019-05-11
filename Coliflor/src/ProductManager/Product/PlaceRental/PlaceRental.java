@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRentalContract>  implements BookPlace, WorkPlace{
 
-    public PlaceRental(ArrayList<PlaceUser> users, ArrayList<Publication> publications, ArrayList<Payment> payments, ArrayList<PlaceRentalContract> contracts) {
-        super(users, publications, payments, contracts);
+    public PlaceRental(ArrayList<PlaceUser> users, ArrayList<Publication> publications, ArrayList<Place> products, ArrayList<Payment> payments, ArrayList<PlaceRentalContract> contracts) {
+        super(users, publications, products, payments, contracts);
     }
 
     public String getWeatherCondition(Place place, Date rentalDate){
@@ -34,7 +34,7 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
         ArrayList<Publication> searchResult = new ArrayList<Publication>();
         switch (filterType){
             case FILTER_DESCRPTION:
-                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                searchResult =  super.searchPublication((String)filterOptions[0]);
             break;
 
             case PLACE_FILTER_LOCATION:
@@ -71,7 +71,7 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
         }
 
     @Override
-    public boolean shareInSocialMedia(User user, Publication publication, String socialMedia) {
+    public boolean shareInSocialMedia(Publication publication, String socialMedia) {
         return true;
     }
 

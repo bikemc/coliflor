@@ -141,6 +141,7 @@ public class User implements Serializable {
 
     public void sendMessage(String messageContent)
     {
+        if (messages == null) messages = new ArrayList<>();
         Date currentDate = new Date();
         Message newMessage = new Message(currentDate, this, messageContent);
         messages.add(newMessage);

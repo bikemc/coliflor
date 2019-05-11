@@ -23,18 +23,21 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     public static final String PUBLICATION_YEAR_FILTER = "publication year";
     public static final String PREVIEW_FILTER = "preview";
 
-    public BookRental(ArrayList<BookUser> users, ArrayList<BookPublication> publications, ArrayList<Payment> payments, ArrayList<BookRentalContract> contracts) {
-        super(users, publications, payments, contracts);
+    public BookRental(ArrayList<BookUser> users, ArrayList<BookPublication> publications, ArrayList<Book> products, ArrayList<Payment> payments, ArrayList<BookRentalContract> contracts) {
+        super(users, publications, products, payments, contracts);
     }
-    public  void addFund(BookUser user, double amount){
-        user.setFund(((BookUser)currentUser).getFund()+ amount);
+
+    public  void addFund(double amount){
+        if(currentUser!= null){
+            currentUser.setFund((currentUser).getFund()+ amount);
+        }
     }
-    public  boolean penaltyPayment(BookUser user, BookPublication publication, Date endDate){
+    public  boolean penaltyPayment(BookPublication publication, Date endDate){
         Date currentDate = new Date();
         int dayDifference= (int)( (currentDate.getTime() - endDate.getTime()) / (1000 * 60 * 60 * 24));
         double amount= publication.getBookRentalContract().getPenaltyPerDay()* dayDifference;
-        if(((BookUser)currentUser).getFund() >= amount){
-            ((BookUser)currentUser).setFund(((BookUser)currentUser).getFund()- amount);
+        if((currentUser).getFund() >= amount){
+            (currentUser).setFund((currentUser).getFund()- amount);
             return true;
         }
         return false;
@@ -56,7 +59,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     }
 
     @Override
-    public ArrayList<Publication> giveRecommendation(User user) {
+    public ArrayList<Publication> giveRecommendation() {
         Random rand = new Random();
         ArrayList<Publication> recomendationList= new ArrayList<>();
         int randomIndex = rand.nextInt(publications.size());
@@ -67,7 +70,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     }
 
     @Override
-    public boolean shareInSocialMedia(User user, Publication publication, String socialMedia) {
+    public boolean shareInSocialMedia(Publication publication, String socialMedia) {
         return true;
     }
 
@@ -101,7 +104,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     @Override
     public boolean rent(BookUser user, BookPublication publication, Date startDate, Date endDate) {
         if( super.rent(user, publication, startDate, endDate)) {
-            ((BookUser) currentUser).setPoint(((BookUser) currentUser).getPoint() + ((Book) publication.getProduct()).getPoint());
+            ( currentUser).setPoint(( currentUser).getPoint() + ((Book) publication.getProduct()).getPoint());
             return true;
         }
         return false;
@@ -112,7 +115,7 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
         ArrayList<BookPublication> searchResult = new ArrayList<>();
         switch (filterType){
             case FILTER_DESCRPTION:
-                searchResult =  super.searchPublication((String)filterOptions[0], "");
+                searchResult =  super.searchPublication((String)filterOptions[0]);
                 break;
             case PAGE_FILTER:
                 int lowerBound = (int)filterOptions[0];

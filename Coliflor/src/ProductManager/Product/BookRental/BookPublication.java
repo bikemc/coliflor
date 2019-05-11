@@ -5,12 +5,14 @@ import RentalSystemManager.Publication;
 
 import java.util.Date;
 
-public class BookPublication extends Publication {
+public class BookPublication extends Publication implements Comparable<Publication>{
     private int bookNumber;
+    private int rentNumber;
     private BookRentalContract bookRentalContract;
 
     public BookPublication(Product product, Date publicationDate, boolean currentlyAvailable, int id, int bookNumber) {
         super(product, publicationDate, currentlyAvailable, id);
+        this.rentNumber = 0;
         this.bookNumber = bookNumber;
     }
 
@@ -28,6 +30,18 @@ public class BookPublication extends Publication {
 
     public void setBookRentalContract(BookRentalContract bookRentalContract) {
         this.bookRentalContract = bookRentalContract;
+    }
+
+    public int getRentNumber() {
+        return rentNumber;
+    }
+
+    public void setRentNumber(int rentNumber) {
+        this.rentNumber = rentNumber;
+    }
+    @Override
+    public int compareTo(Publication o) {
+        return (int)(this.rentNumber- ((BookPublication)o).getRentNumber());
     }
 }
 
