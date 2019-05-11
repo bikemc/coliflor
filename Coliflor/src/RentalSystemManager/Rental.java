@@ -62,8 +62,17 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     }
 
     public ArrayList<PublicationT> searchPublication(String searchKey){
-        return null;
+        ArrayList<PublicationT> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(publications.get(i).getTitle().contains(searchKey)){
+                searchResult.add(publications.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
     }
+
 
     public boolean sendMessage(String messageContent){
         if(currentUser != null) {
@@ -74,15 +83,8 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     }
 
     public ArrayList<ProductT> searchProduct(String searchKey){
-        ArrayList<ProductT> searchResult = new ArrayList<>();
-        for(int i=0; i<publications.size(); i++){
-            if((publications.get(i).getProduct()).getDescription().contains(searchKey)){
-                searchResult.add(products.get(i));
-                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
-                currentUser.getSearchHistory().add(publications.get(i));
-            }
-        }
-        return searchResult;
+
+        return null;
     }
 
     public boolean rent(UserT user, PublicationT publication,Date startDate, Date endDate){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
