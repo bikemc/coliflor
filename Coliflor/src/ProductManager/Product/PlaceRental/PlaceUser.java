@@ -14,5 +14,4 @@ public class PlaceUser extends User{
         super(name, email, address, username, phoneNumber, password, birthday, messages, rentalHistory, searchHistory, reviews, payments);
     }
 
-
 }
