@@ -36,6 +36,11 @@ public class User implements Serializable {
         this.payments = payments;
     }
 
+    public <T extends User> T createUser(Object... t) {
+
+        return null;
+    }
+
 
     //Methods
     public String getName() {
@@ -136,6 +141,7 @@ public class User implements Serializable {
 
     public void sendMessage(String messageContent)
     {
+        if (messages == null) messages = new ArrayList<>();
         Date currentDate = new Date();
         Message newMessage = new Message(currentDate, this, messageContent);
         messages.add(newMessage);

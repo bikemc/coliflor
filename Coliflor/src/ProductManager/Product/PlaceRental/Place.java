@@ -19,7 +19,7 @@ public class Place extends Product implements Comparable<Place>{
     ArrayList<Date> schedule;
     boolean currentAvailability;
 
-    public Place(double price, String description, boolean onRent, List<Review> reviews, int id, String location, String placeName, String view3DURL, ArrayList<String> services, ArrayList<String> purpose, ArrayList<String> transportationOptions, ArrayList<String> photoURLs, int capacity, double rating, ArrayList<Date> schedule, boolean currentAvailability) {
+    public Place(double price, String description, boolean onRent, ArrayList<Review> reviews, int id, String location, String placeName, String view3DURL, ArrayList<String> services, ArrayList<String> purpose, ArrayList<String> transportationOptions, ArrayList<String> photoURLs, int capacity, double rating, ArrayList<Date> schedule, boolean currentAvailability) {
         super(price, description, onRent, reviews, id);
         this.location = location;
         this.placeName = placeName;

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_WorkLabor.WorkerSearchController">
+<children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+    <Text fill="white" layoutX="46.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Worker Search" wrappingWidth="234.25390625">
+        <font>
+            <Font name="System Bold" size="30.0" />
+        </font>
+    </Text>
+    <Text layoutX="46.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" wrappingWidth="137.1357421875">
+        <font>
+            <Font name="System Bold" size="21.0" />
+        </font>
+    </Text>
+    <Text layoutX="46.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City">
+        <font>
+            <Font name="System Bold" size="21.0" />
+        </font></Text>
+    <Text layoutX="46.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+        <font>
+            <Font name="System Bold" size="21.0" />
+        </font>
+    </Text>
+    <ChoiceBox fx:id="workerType" layoutX="189.0" layoutY="153.0" prefWidth="150.0" value="Novel">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Teacher" />
+                <String fx:value="Dancer" />
+                <String fx:value="Servant" />
+                <String fx:value="Cheff" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <Button layoutX="745.0" layoutY="523.0" mnemonicParsing="false" onAction="#backMainWorkerPage" prefHeight="39.0" prefWidth="119.0" text="Back" />
+    <Button layoutX="54.0" layoutY="451.0" mnemonicParsing="false" onAction="#openWorkerResultPage" prefHeight="39.0" prefWidth="119.0" text="Search" />
+      <TextField layoutX="186.0" layoutY="214.0" prefHeight="39.0" prefWidth="156.0" />
+      <TextField layoutX="189.0" layoutY="281.0" prefHeight="39.0" prefWidth="150.0" />
+      <Text layoutX="48.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="189.0" layoutY="344.0" prefWidth="150.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Price" />
+                <String fx:value="Most Positively Rated" />
+            </FXCollections>
+        </items>
+      </ChoiceBox>
+      <ImageView fitHeight="133.0" fitWidth="137.0" layoutX="280.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/workerrental.png" />
+         </image>
+      </ImageView>
+</children>
+</AnchorPane>

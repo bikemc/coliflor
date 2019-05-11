@@ -1,5 +1,6 @@
 package UI.ui_Book;
 
+import ProductManager.Product.BookRental.Book;
 import ProductManager.Product.BookRental.BookPublication;
 import UI.RentalData;
 import com.sun.org.apache.xml.internal.security.Init;
@@ -48,15 +49,15 @@ public class MainBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        bookData = new RentalData();
-        bookPublicationData = new RentalData();
+        //bookData = new RentalData();
+        //bookPublicationData = new RentalData();
         ArrayList<BookPublication> pubs = RentalData.bookRental.getPublications();
-        firstName.setText(pubs.get(0).getProduct().getTitle());
-        secondName.setText(pubs.get(1).getProduct().getTitle());
-        thirdName.setText(pubs.get(2).getProduct().getTitle());
-        forthName.setText(pubs.get(3).getProduct().getTitle());
-        fifthName.setText(pubs.get(4).getProduct().getTitle());
-        sixthName.setText(pubs.get(5).getProduct().getTitle());
+        firstName.setText(((Book)(pubs.get(0).getProduct())).getBookTitle());
+        secondName.setText(((Book)(pubs.get(1).getProduct())).getBookTitle());
+        thirdName.setText(((Book)(pubs.get(2).getProduct())).getBookTitle());
+        forthName.setText(((Book)(pubs.get(3).getProduct())).getBookTitle());
+        fifthName.setText(((Book)(pubs.get(4).getProduct())).getBookTitle());
+        sixthName.setText(((Book)(pubs.get(5).getProduct())).getBookTitle());
 
         firstPrice.setText(pubs.get(0).getProduct().getPrice() + "TL");
         secondPrice.setText(pubs.get(1).getProduct().getPrice() + "TL");

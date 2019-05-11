@@ -14,22 +14,6 @@ public abstract class Contract {
         this.endDate = endDate;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Publication getPublication() {
-        return publication;
-    }
-
-    public void setPublication(Publication publication) {
-        this.publication = publication;
-    }
-
     public Date getStartDate() {
         return startDate;
     }

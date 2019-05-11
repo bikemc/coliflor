@@ -1,0 +1,31 @@
+.button
+{
+    -fx-background-color: linear-gradient(#26d724, #007822);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+.text {
+    -fx-font-smoothing-type: lcd;
+    -fx-fill: black;
+    -fx-font-size: 11pt;
+}
+
+.rootPane{
+    -fx-border-insets: 23;
+
+    -fx-background-insets: 23;
+
+    -fx-background-radius: 6;
+
+    -fx-border-radius: 6;
+
+    -fx-border-color: gray;
+
+    -fx-border-style: solid;
+
+    -fx-border-width: 1;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(100, 100, 100, 1), 24, 0.5, 0, 0);
+}
+

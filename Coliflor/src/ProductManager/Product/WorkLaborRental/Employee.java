@@ -13,7 +13,7 @@ public class Employee extends Product implements Comparable<Product>{
     private double rating;
     private ArrayList<Date> schedule;
 
-    public Employee(double price, String description, boolean onRent, List<Review> reviews, int id, int age, int experiencedYears, ArrayList<String> occupation, String address, String employeeName, double rating, ArrayList<Date> schedule) {
+    public Employee(double price, String description, boolean onRent, ArrayList<Review> reviews, int id, int age, int experiencedYears, ArrayList<String> occupation, String address, String employeeName, double rating, ArrayList<Date> schedule) {
         super(price, description, onRent, reviews, id);
         this.age = age;
         this.experiencedYears = experiencedYears;
