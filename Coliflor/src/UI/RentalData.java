@@ -5,6 +5,8 @@ import ProductManager.Product.BookRental.BookPublication;
 import ProductManager.Product.BookRental.BookRental;
 import ProductManager.Product.BookRental.BookUser;
 import RentalSystemManager.Publication;
+import javafx.fxml.FXML;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,6 +20,7 @@ public class RentalData {
     public ArrayList <BookPublication> bookPublication = new ArrayList<BookPublication>();
     public static BookRental bookRental;
     public ArrayList<BookUser> users  =  new ArrayList<BookUser>();
+
 
 
     public RentalData() {
