@@ -3,6 +3,7 @@ package ProductManager.Product.BookRental;
 import RentalSystemManager.Product;
 import RentalSystemManager.Review;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Product {
@@ -18,8 +19,8 @@ public class Book extends Product {
         NOVEL, SCIENCEFICTION, DRAMA, ACTION, BIOGRAPHY, COMICS
     }
 
-    public Book(double price, String description, boolean onRent, List<Review> reviews, String bookTitle, int pageNo, String author, int publicationYear, String address, String preview, int point) {
-        super(price, description, onRent, reviews);
+    public Book(double price, String description, boolean onRent, ArrayList<Review> reviews, int id, String bookTitle, int pageNo, String author, int publicationYear, String address, String preview, int point) {
+        super(price, description, onRent, reviews, id);
         this.bookTitle = bookTitle;
         this.pageNo = pageNo;
         this.author = author;
@@ -84,4 +85,5 @@ public class Book extends Product {
     public void setPoint(int point) {
         this.point = point;
     }
+
 }

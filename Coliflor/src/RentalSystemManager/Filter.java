@@ -2,6 +2,6 @@ package RentalSystemManager;
 
 import java.util.ArrayList;
 
-public interface Filter {
-    public ArrayList<Publication> filter(String filterType, String filterOptions);
+public interface Filter <PublicationT>{
+    public ArrayList<PublicationT> filter(String filterType, Object... filterOptions);
 }
