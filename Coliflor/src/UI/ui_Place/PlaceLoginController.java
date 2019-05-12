@@ -1,10 +1,12 @@
 package UI.ui_Place;
 
+import ProductManager.Product.BookRental.BookUser;
 import ProductManager.Product.PlaceRental.Place;
 import ProductManager.Product.PlaceRental.PlaceRental;
 import ProductManager.Product.PlaceRental.PlaceRentalContract;
 import ProductManager.Product.PlaceRental.PlaceUser;
 import RentalSystemManager.*;
+import UI.RentalData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -33,6 +38,7 @@ public class PlaceLoginController {
     protected ArrayList<Payment> payments= new ArrayList<Payment>();
     protected ArrayList<PlaceRentalContract> contracts= new ArrayList<PlaceRentalContract>();
     protected PlaceRental rental;
+    protected RentalData rentalData;
 
     @FXML
     private TextField loginUsername;
@@ -52,12 +58,17 @@ public class PlaceLoginController {
 
     public void openPlaceMainPage(ActionEvent event) throws Exception
     {
+        if(rentalData==null)
+             rentalData = new RentalData();
         //Default User
-        users.add(new PlaceUser("Cansu","cansu@email.com","Çayyolu, Ankara", "cansuy",123, "p",  new Date(1997,12,24),null,null,null,null,null));
-        rental = new PlaceRental(users, publications, products, payments, contracts);
+        //  users.add(new BookUser("Cansu","cansu@email.com","Çayyolu, Ankara", "cansuy",123, "p",  new Date(1997,12,24),null,null,null,null,null,null,0,null,null,0));
+        //rental = new BookRental(rentalData.users, publications, products, payments, contracts);
 
-        if (rental.login(loginUsername.getText(), loginPassword.getText()))
+        if (RentalData.placeRental.login(loginUsername.getText(), loginPassword.getText()))
         {
+            //MainBookController bookCont = new MainBookController();
+            //bookCont.setCurrentUser(loginUsername.getText());
+            saveUsername();
             ui_Place = initializeScene("ui_Place.fxml");
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
             primaryStage.setScene(ui_Place);
@@ -81,12 +92,22 @@ public class PlaceLoginController {
 
     public void placeSignup(ActionEvent event) throws Exception {
 
-        users.add(new PlaceUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null));
+        rentalData = new RentalData();
+        RentalData.placeRental.getUsers().add(new PlaceUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null));
         Stage secondStage = new Stage();
-        secondStage.setScene(new Scene(new HBox(300, new Label("     Successfully Signed-up")), 300,200));
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Successfully Signed-up")), 300,200));
         secondStage.show();
     }
 
+
+    public void saveUsername()
+    {
+        try {
+            Files.write(Paths.get("../logs.txt"), loginUsername.getText().getBytes());
+        }catch (IOException e) {
+            //exception handling left as an exercise for the reader
+        }
+    }
 
 
 

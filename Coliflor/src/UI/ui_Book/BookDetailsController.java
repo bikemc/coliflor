@@ -68,9 +68,10 @@ public class BookDetailsController implements Initializable {
             e.printStackTrace();
         }
 
-        nameBook.setText(((Book)pubs.get(savedBookID).getProduct()).getBookTitle());
-        priceBook.setText(pubs.get(savedBookID).getProduct().getPrice() + "TL");
-        summaryBook.setText(pubs.get(savedBookID).getProduct().getDescription());
+        nameBook.setText(((Book)pubs.get(savedBookID-1).getProduct()).getBookTitle());
+        priceBook.setText(pubs.get(savedBookID-1).getProduct().getPrice() + "TL");
+        summaryBook.setText(pubs.get(savedBookID-1).getProduct().getDescription());
+        //nameBook.setText(bookPublicationData.mainPageBook.get(savedBookID-1).getBookTitle());
 
         if(savedBookID == 1)
              bookImage.setImage(new Image("UI/Images/calıkusu.jpg"));
@@ -79,7 +80,7 @@ public class BookDetailsController implements Initializable {
         else if(savedBookID == 3)
             bookImage.setImage(new Image("UI/Images/lordofrings.jpg"));
         else if(savedBookID == 4)
-            bookImage.setImage(new Image("UI/Images/imprpb.jpg"));
+            bookImage.setImage(new Image("UI/Images/imrpb.jpg"));
         else if(savedBookID == 5)
             bookImage.setImage(new Image("UI/Images/hungergames.jpg"));
         else if(savedBookID == 6)
