@@ -22,11 +22,11 @@
       <Text layoutX="80.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
       <Text layoutX="80.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
       <Text layoutX="78.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />
-      <Text layoutX="188.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="188.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="188.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="188.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="188.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="userName" layoutX="188.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="userSurname" layoutX="188.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="userEmail" layoutX="188.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="userPhone" layoutX="188.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="userAddress" layoutX="188.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Button layoutX="672.0" layoutY="143.0" mnemonicParsing="false" text="Settings" />
       <Button layoutX="672.0" layoutY="206.0" mnemonicParsing="false" text="Message with Company" />
       <ImageView fitHeight="136.0" fitWidth="126.0" layoutX="214.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">

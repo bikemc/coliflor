@@ -4,10 +4,14 @@ import ProductManager.Product.BookRental.Book;
 import ProductManager.Product.BookRental.BookPublication;
 import ProductManager.Product.BookRental.BookRental;
 import ProductManager.Product.BookRental.BookUser;
+import ProductManager.Product.WorkLaborRental.Employee;
+import ProductManager.Product.WorkLaborRental.WorkLaborRental;
+import ProductManager.Product.WorkLaborRental.WorkLaborUser;
 import RentalSystemManager.Publication;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -21,15 +25,22 @@ public class RentalData {
     public static BookRental bookRental;
     public ArrayList<BookUser> users  =  new ArrayList<BookUser>();
 
+    public ArrayList <Employee> employee = new ArrayList<>(); //
+    public ArrayList <Publication> workerPublication = new ArrayList<>(); //
+
+    public ArrayList <String> occupation = new ArrayList<>(); //
+    public ArrayList <String> occupation1 = new ArrayList<>(); //
+    public ArrayList <String> occupation2 = new ArrayList<>(); //
+    public static WorkLaborRental workerRental;
 
 
     public RentalData() {
 
-
+        ///////////////////////////////////////
         users.add(new BookUser("Cansu","cansu@email.com","Çayyolu, Ankara", "c",123, "p",  new Date(1997,12,24),null,null,null,null,null,null,0,null,null,0));
         mainPageBook.add(new Book(10, "Orphan Feride spends her school vacation" +
                 " at her aunt's home, and falls for her sophisticated older cousin, Kamran.", false, null, 1, "LoveBird", 409, "Reşat Nuri Güntekin", 1922, "Çayyolu", "As a young child, Feride is orphaned and sent to live with her maternal aunt’s family. Her arrival upsets the delicate emotional balance of the household. Her female cousin Necmiye, particularly resents the attention her mother devotes to the new member of their household. Feride also has a combative relationship with her older male cousin Kamran which originates from a mutual attraction and distrust between them.", 10));
-        mainPageBook.add(new Book(15, "Les Misérables is a French historical novel by Victor Hugo", false, null, 2, "Lés Miserables", 1000, "Victor Hugo", 1862, "Konutkent", "The convict Jean Valjean is released from a French prison after serving nineteen years for stealing a loaf of bread and for subsequent attempts to escape from prison. When Valjean arrives at the town of Digne, no one is willing to give him shelter because he is an ex-convict. Desperate, Valjean knocks on the door of M. Myriel, the kindly bishop of Digne. Myriel treats Valjean with kindness, and Valjean repays the bishop by stealing his silverware. When the police arrest Valjean, Myriel covers for him, claiming that the silverware was a gift.", 20));
+        mainPageBook.add(new Book(15, "Les Misérables is a French historical novel by Victor Hugo", false, null, 2, "Les Miserables", 1000, "Victor Hugo", 1862, "Konutkent", "The convict Jean Valjean is released from a French prison after serving nineteen years for stealing a loaf of bread and for subsequent attempts to escape from prison. When Valjean arrives at the town of Digne, no one is willing to give him shelter because he is an ex-convict. Desperate, Valjean knocks on the door of M. Myriel, the kindly bishop of Digne. Myriel treats Valjean with kindness, and Valjean repays the bishop by stealing his silverware. When the police arrest Valjean, Myriel covers for him, claiming that the silverware was a gift.", 20));
         mainPageBook.add(new Book(60, "The Lord of the Rings is an epic high fantasy novel written by English author and scholar J. R. R. Tolkien.", false, null, 3, "Lord of the Rings", 304, "J.R.R. Tolkien",2001,"Çukurambar","The future of civilization rests in the fate of the One Ring, which has been lost for centuries. Powerful forces are unrelenting in their search for it. But fate has placed it in the hands of a young Hobbit named Frodo Baggins (Elijah Wood), who inherits the Ring and steps into legend. A daunting task lies ahead for Frodo when he becomes the Ringbearer - to destroy the One Ring in the fires of Mount Doom where it was forged.", 10));
         mainPageBook.add(new Book(20, "Orphan Feride spends her school vacation" +
                 " at her aunt's home, and falls for her sophisticated older cousin, Kamran.", false, null, 4, "Improbable", 409, "Reşat Nuri Güntekin", 1922, "Çayyolu", "As a young child, Feride is orphaned and sent to live with her maternal aunt’s family. Her arrival upsets the delicate emotional balance of the household. Her female cousin Necmiye, particularly resents the attention her mother devotes to the new member of their household. Feride also has a combative relationship with her older male cousin Kamran which originates from a mutual attraction and distrust between them.", 10));
@@ -52,7 +63,17 @@ public class RentalData {
             new ArrayList<>(),
             new ArrayList<>()
         );
-
+        ///////////////////////////////////////
+        occupation.add("Math Teacher");
+        occupation1.add("Nanny");
+        occupation2.add("Piano Teacher");
+        employee.add((new Employee(200,"Experienced Teacher",false, null,1,30,30,occupation,"Çayyolu","Brad",9,null)));
+        employee.add((new Employee(200,"Experienced Nanny",false, null,1,30,10,occupation,"Çayyolu","Sabrina",9,null)));
+        employee.add((new Employee(200,"Experienced Teacher",false, null,1,30,20,occupation,"Çayyolu","Alice",9,null)));
+        workerPublication.add(new Publication(employee.get(0),"A good math teacher",new Date(2019,05,10),true,1));
+        workerPublication.add(new Publication(employee.get(1),"A good Nanny",new Date(2019,05,10),true,2));
+        workerPublication.add(new Publication(employee.get(2),"Really good math teacher",new Date(2019,05,10),true,3));
+        workerRental = new WorkLaborRental(null, workerPublication,employee,null,null);
     }
 
 
@@ -64,5 +85,16 @@ public class RentalData {
                  return bookRental.getUsers().get(i);
         }
         return null;
+    }
+
+
+    public static int returnBookID(String username)
+    {
+        for(int i = 0; i < bookRental.getProducts().size(); i++)
+        {
+            if(bookRental.getProducts().get(i).getBookTitle().equals(username))
+                return bookRental.getProducts().get(i).getId();
+        }
+        return 0;
     }
 }

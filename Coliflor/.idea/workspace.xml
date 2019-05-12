@@ -12,6 +12,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Coliflor$MainPageController.ic" NAME="MainPageController Coverage Results" MODIFIED="1557669630677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>UI.*</FILTER>
+    </SUITE>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -61,8 +66,8 @@
       <file leaf-file-name="RentalData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI/RentalData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="210">
+              <caret line="75" column="42" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,48 +75,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookDetailsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookDetailsController.java">
+      <file leaf-file-name="ui_Book.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_Book.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="-244">
+              <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="136" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookSearchController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookSearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui_book_results.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_results.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rental.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RentalSystemManager/Rental.java">
+      <file leaf-file-name="ui_Worker.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_Worker.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state relative-caret-position="154">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="37" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file leaf-file-name="BookRental.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/BookRental/BookRental.java">
+      <file leaf-file-name="MainWorkerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/MainWorkerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="158" column="49" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="49" />
+            <state relative-caret-position="229">
+              <caret line="114" column="62" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,11 +107,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookResultsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookResultsController.java">
+      <file leaf-file-name="ui_worker_details.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_details.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="292">
+              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="MainBookController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/MainBookController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-398">
+              <caret line="83" column="26" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,22 +129,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookAccountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookAccountController.java">
+      <file leaf-file-name="WorkerDetailsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerDetailsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="59" />
+            <state relative-caret-position="75">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookLoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookLoginController.java">
+      <file leaf-file-name="ui_book_details.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_details.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+            <state relative-caret-position="15">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -171,6 +170,8 @@
       <find>search</find>
       <find>id</find>
       <find>searchPubli</find>
+      <find>place</find>
+      <find>book</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -186,25 +187,29 @@
         <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_login_signup.fxml" />
         <option value="$PROJECT_DIR$/src/ProductManager/Product/PlaceRental/PlaceRental.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Place/PlaceLoginController.java" />
-        <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_Book.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerLoginController.java" />
         <option value="$PROJECT_DIR$/src/UI/MainPageController.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_book_details.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_book_account.fxml" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_book_search.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookSearchController.java" />
-        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookDetailsController.java" />
         <option value="$PROJECT_DIR$/src/RentalSystemManager/Publication.java" />
         <option value="$PROJECT_DIR$/src/ProductManager/Product/BookRental/BookPublication.java" />
         <option value="$PROJECT_DIR$/src/RentalSystemManager/Rental.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/MainBookController.java" />
-        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookLoginController.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/BookAccountController.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Place/PlaceDetailsController.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Place/ui_place_results.fxml" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_book_results.fxml" />
-        <option value="$PROJECT_DIR$/src/UI/RentalData.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookSearchController.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookLoginController.java" />
         <option value="$PROJECT_DIR$/src/UI/ui_Book/BookResultsController.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_Book.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/ui_Book/BookDetailsController.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_Book/ui_book_account.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerLoginController.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_account.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerAccountController.java" />
+        <option value="$PROJECT_DIR$/src/UI/RentalData.java" />
+        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_Worker.fxml" />
+        <option value="$PROJECT_DIR$/src/UI/ui_WorkLabor/MainWorkerController.java" />
       </list>
     </option>
   </component>
@@ -231,9 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +265,19 @@
               <item name="Coliflor" type="b2602c69:ProjectViewProjectNode" />
               <item name="Coliflor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coliflor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coliflor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="RentalSystemManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coliflor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coliflor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -272,10 +287,20 @@
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="ui_Book" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Coliflor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Coliflor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="ui_WorkLabor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -415,11 +440,12 @@
       <workItem from="1557562674328" duration="40659000" />
       <workItem from="1557605705629" duration="2285000" />
       <workItem from="1557608000667" duration="8147000" />
+      <workItem from="1557664689181" duration="13913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52393000" />
+    <option name="totallyTimeSpent" value="66306000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -443,19 +469,20 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2658228" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2658228" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.07835218" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83386075" visible="true" weight="0.26817447" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83189654" visible="true" weight="0.28836834" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" sideWeight="0.16613925" side_tool="true" visible="true" weight="0.26817447" />
+      <window_info id="Structure" order="1" sideWeight="0.16810344" side_tool="true" visible="true" weight="0.28836834" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -489,56 +516,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -557,12 +534,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -586,12 +563,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -617,28 +594,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_login_signup.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="30" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/MainWorkerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Place/ui_place_login_signup.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="30" column="103" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="30" selection-end-column="103" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/PlaceRental/PlaceRental.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -650,25 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_login_signup.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/WorkLaborRental/WorkLaborRental.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -718,53 +665,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_details.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Images/calıkusu.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_Book.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_account.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="53" column="16" lean-forward="true" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RentalSystemManager/Publication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="e#1419#1420#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1523#1524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/BookRental/BookPublication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -773,28 +683,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/MainBookController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="79" column="9" lean-forward="true" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Place/ui_place_search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-785" />
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Place/PlaceSearchController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -810,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Place/PlaceDetailsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="43">
@@ -825,17 +711,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Place/ui_place_results.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/RentalData.java">
+    <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/BookRental/BookRental.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="1045">
+          <caret line="157" column="35" lean-forward="true" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -844,52 +730,191 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RentalSystemManager/Rental.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
+        <state relative-caret-position="423">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ProductManager/Product/BookRental/BookRental.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="158" column="49" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookDetailsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_results.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookResultsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="138">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookSearchController.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_results.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="254">
+          <caret line="35" column="100" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="100" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookSearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="45" column="58" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="59" selection-start-line="59" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RentalSystemManager/Publication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RentalSystemManager/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_login_signup.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="94" selection-end-line="30" selection-end-column="103" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_login_signup.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="70" column="12" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_account.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_account.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="28" column="8" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/BookAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/RentalData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_book_details.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/ui_Book.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244">
+          <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="136" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/WorkerDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_Book/MainBookController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_Worker.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/MainWorkerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="114" column="62" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/ui_WorkLabor/ui_worker_details.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
   </component>
 </project>
