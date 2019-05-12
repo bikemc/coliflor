@@ -30,7 +30,7 @@
          <image>
             <Image url="@../Images/sefiller.jpg" />
          </image></ImageView>
-        <ImageView fx:id="olasiliksiz" fitHeight="167.0" fitWidth="234.0" layoutX="74.0" layoutY="329.0" onMouseClicked="#goDetailsOfBook3" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="olasiliksiz" fitHeight="167.0" fitWidth="234.0" layoutX="74.0" layoutY="329.0" onMouseClicked="#goDetailsOfBook4" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/imrpb.jpg" />
          </image></ImageView>

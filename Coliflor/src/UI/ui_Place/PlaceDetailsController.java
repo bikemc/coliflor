@@ -1,16 +1,87 @@
 package UI.ui_Place;
 
+import ProductManager.Product.BookRental.Book;
+import ProductManager.Product.BookRental.BookPublication;
+import ProductManager.Product.PlaceRental.Place;
+import RentalSystemManager.Publication;
+import UI.RentalData;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PlaceDetailsController {
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import static java.lang.Integer.parseInt;
+
+public class PlaceDetailsController implements Initializable{
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
     private Scene ui_Place, ui_place_results, ui_place_rent;
+
+    public Publication publication;
+
+    @FXML
+    private Text namePlace, pricePlace, placeLocation, capacityPlace, services, transportation;
+    @FXML
+    private javafx.scene.image.ImageView placeImage;
+    private  int savedPlaceID;
+    private RentalData placePublicationData;
+
+
+    public void initialize(URL location, ResourceBundle resources) {
+
+        placePublicationData = new RentalData();
+        ArrayList<Publication> pubs = RentalData.placeRental.getPublications();
+        // summaryText.setText(publication.getProduct().getDescription());
+        BufferedReader Buff = null;
+        try {
+            Buff = new BufferedReader(new FileReader("../bookname.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            savedPlaceID = parseInt( Buff.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        namePlace.setText(((Place)pubs.get(savedPlaceID-1).getProduct()).getPlaceName());
+        pricePlace.setText(pubs.get(savedPlaceID-1).getProduct().getPrice() + "TL");
+        capacityPlace.setText(((Place) pubs.get(savedPlaceID-1).getProduct()).getCapacity() + "");
+        placeLocation.setText(((Place) pubs.get(savedPlaceID-1).getProduct()).getLocation());
+        String offserv = "";
+        for(int i=0; i<((Place) pubs.get(savedPlaceID-1).getProduct()).getServices().size(); i++)
+            offserv += ((Place) pubs.get(savedPlaceID-1).getProduct()).getServices().get(i) + "\n";
+        services.setText(offserv);
+        String trans = "";
+        for(int i=0; i<((Place) pubs.get(savedPlaceID-1).getProduct()).getTransportationOptions().size(); i++)
+            trans += ((Place) pubs.get(savedPlaceID-1).getProduct()).getTransportationOptions().get(i) + "\n";
+        transportation.setText(trans);
+
+        if(savedPlaceID == 1)
+            placeImage.setImage(new Image("UI/Images/birthday.jpg"));
+        else if(savedPlaceID == 2)
+            placeImage.setImage(new Image("UI/Images/meeting.jpg"));
+        else if(savedPlaceID == 3)
+            placeImage.setImage(new Image("UI/Images/babyshower.jpg"));
+        else if(savedPlaceID == 4)
+            placeImage.setImage(new Image("UI/Images/wedding.jpg"));
+
+    }
+
 
     public Scene initializeScene(String fxmlName) throws java.io.IOException
     {

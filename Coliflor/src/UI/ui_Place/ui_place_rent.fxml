@@ -19,7 +19,7 @@
       </Text>
       <CheckBox layoutX="46.0" layoutY="141.0" mnemonicParsing="false" text="By Hand" />
       <CheckBox layoutX="45.0" layoutY="194.0" mnemonicParsing="false" text="By Credit Card" />
-      <Button layoutX="45.0" layoutY="372.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="57.0" text="Pay" />
+      <Button onAction="#pay" layoutX="45.0" layoutY="372.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="57.0" text="Pay" />
       <Button layoutX="781.0" layoutY="530.0" mnemonicParsing="false" onAction="#backPlaceDetailsPage" prefHeight="39.0" prefWidth="79.0" text="Back" />
       <Button layoutX="615.0" layoutY="525.0" mnemonicParsing="false" onAction="#backPlaceMainPage" prefHeight="45.0" prefWidth="147.0" text="Back to MainPage" />
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />

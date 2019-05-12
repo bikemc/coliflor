@@ -65,11 +65,20 @@ public class BookResultsController implements Initializable {
 
         //for (BookPublication p:searchedPublications) System.out.println(((Book)p.getProduct()).getBookTitle());
 
-        System.out.println("Size: " + p.size());
+       // System.out.println("Size: " + p.size());
         resultName.setText(((Book)p.get(0).getProduct()).getBookTitle());
-
-
-
+        if(((Book)p.get(0).getProduct()).getId() == 1)
+            resultImage.setImage(new Image("UI/Images/calıkusu.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 2)
+            resultImage.setImage(new Image("UI/Images/sefiller.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() ==  3)
+            resultImage.setImage(new Image("UI/Images/lordofrings.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 4)
+            resultImage.setImage(new Image("UI/Images/imprpb.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 5)
+            resultImage.setImage(new Image("UI/Images/hungergames.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 6)
+            resultImage.setImage(new Image("UI/Images/warandpeace.jpg"));
 
 
     }

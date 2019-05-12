@@ -4,6 +4,9 @@ import ProductManager.Product.BookRental.Book;
 import ProductManager.Product.BookRental.BookPublication;
 import ProductManager.Product.BookRental.BookRental;
 import ProductManager.Product.BookRental.BookUser;
+import ProductManager.Product.PlaceRental.Place;
+import ProductManager.Product.PlaceRental.PlaceRental;
+import ProductManager.Product.PlaceRental.PlaceUser;
 import ProductManager.Product.WorkLaborRental.Employee;
 import ProductManager.Product.WorkLaborRental.WorkLaborRental;
 import ProductManager.Product.WorkLaborRental.WorkLaborUser;
@@ -32,6 +35,14 @@ public class RentalData {
     public ArrayList <String> occupation1 = new ArrayList<>(); //
     public ArrayList <String> occupation2 = new ArrayList<>(); //
     public static WorkLaborRental workerRental;
+
+    public ArrayList<Place> mainPagePlace = new ArrayList<Place>();
+    public ArrayList <Publication> placePublication = new ArrayList<Publication>();
+    public static PlaceRental placeRental;
+    public ArrayList<PlaceUser> placeusers  =  new ArrayList<PlaceUser>();
+    public ArrayList<String> offservices1 = new ArrayList<>();
+    public ArrayList<String> transportation1 = new ArrayList<>();
+    public ArrayList<String> offservices2 = new ArrayList<>();
 
 
     public RentalData() {
@@ -74,6 +85,30 @@ public class RentalData {
         workerPublication.add(new Publication(employee.get(1),"A good Nanny",new Date(2019,05,10),true,2));
         workerPublication.add(new Publication(employee.get(2),"Really good math teacher",new Date(2019,05,10),true,3));
         workerRental = new WorkLaborRental(null, workerPublication,employee,null,null);
+
+
+        offservices1.add("live music");
+        offservices1.add("food");
+        transportation1.add("bus");
+        transportation1.add("taxi");
+        offservices2.add("food");
+        placeusers.add(new PlaceUser("Cansu","cansu@email.com","Çayyolu, Ankara", "c",123, "p",  new Date(1997,12,24),null,null,null,null,null));
+        mainPagePlace.add(new Place(200,"happy birthday",false,null,1,"Umitkoy","PParty","", offservices1,null,transportation1,null,1000,7,null,true));
+        mainPagePlace.add(new Place(500,"for meetings",false,null,2,"Oran","Meeting","", offservices1,null,transportation1,null,50,5,null,true));
+        mainPagePlace.add(new Place(100,"best for baby shower",false,null,3,"Cayyolu","BabyShower","", offservices2,null,transportation1,null,70,6,null,true));
+        mainPagePlace.add(new Place(700,"happy wedding",false,null,4,"Tunali","Wedding","", offservices1,null,transportation1,null,5000,9,null,true));
+        placePublication.add(new Publication(mainPagePlace.get(0),mainPagePlace.get(0).getPlaceName(),new Date(),mainPagePlace.get(0).isOnRent(),1));
+        placePublication.add(new Publication(mainPagePlace.get(1),mainPagePlace.get(1).getPlaceName(),new Date(),mainPagePlace.get(1).isOnRent(),2));
+        placePublication.add(new Publication(mainPagePlace.get(2),mainPagePlace.get(2).getPlaceName(),new Date(),mainPagePlace.get(2).isOnRent(),3));
+        placePublication.add(new Publication(mainPagePlace.get(3),mainPagePlace.get(3).getPlaceName(),new Date(),mainPagePlace.get(3).isOnRent(),4));
+
+        placeRental = new PlaceRental(
+                placeusers,
+                placePublication,
+                mainPagePlace,
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
     }
 
 
@@ -96,5 +131,15 @@ public class RentalData {
                 return bookRental.getProducts().get(i).getId();
         }
         return 0;
+    }
+
+    public static PlaceUser returnPlaceUser(String username)
+    {
+        for(int i = 0; i < placeRental.getUsers().size(); i++)
+        {
+            if(placeRental.getUsers().get(i).getUsername().equals(username))
+                return placeRental.getUsers().get(i);
+        }
+        return null;
     }
 }

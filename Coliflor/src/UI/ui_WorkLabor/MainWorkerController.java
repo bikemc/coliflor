@@ -3,20 +3,27 @@ package UI.ui_WorkLabor;
 import ProductManager.Product.BookRental.Book;
 import ProductManager.Product.BookRental.BookPublication;
 import ProductManager.Product.WorkLaborRental.Employee;
-import ProductManager.Product.WorkLaborRental.WorkLaborRental;
 import RentalSystemManager.Publication;
 import UI.RentalData;
+import com.sun.org.apache.xml.internal.security.Init;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -78,7 +85,7 @@ public class MainWorkerController implements Initializable {
         primaryStage.setScene(ui_Worker_account);
     }
 
-    public void goDetailsOfEmployee1(ActionEvent event) throws Exception {
+    public void goDetailsOfEmployee1() throws Exception {
         try {
 
             Files.write(Paths.get("../bookname.txt"), "1".getBytes());
@@ -91,7 +98,7 @@ public class MainWorkerController implements Initializable {
         primaryStage.setScene(ui_worker_details);
     }
 
-    public void goDetailsOfEmployee2(ActionEvent event) throws Exception {
+    public void goDetailsOfEmployee2() throws Exception {
         try {
 
             Files.write(Paths.get("../bookname.txt"), "2".getBytes());
@@ -104,7 +111,7 @@ public class MainWorkerController implements Initializable {
         primaryStage.setScene(ui_worker_details);
     }
 
-    public void goDetailsOfEmployee3(ActionEvent event) throws Exception {
+    public void goDetailsOfEmployee3() throws Exception {
         try {
 
             Files.write(Paths.get("../bookname.txt"), "3".getBytes());
