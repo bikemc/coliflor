@@ -60,13 +60,14 @@ public class BookAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        BookUser user = RentalData.returnUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        System.out.println(RentalData.bookRental.currentUser.getUsername());
+        // BookUser user = RentalData.returnUser(username);
+        userName.setText(RentalData.bookRental.currentUser.getUsername());
+        userSurname.setText(RentalData.bookRental.currentUser.getName());
+        userPhone.setText( Long.toString(RentalData.bookRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.bookRental.currentUser.getEmail());
+        userAddress.setText(RentalData.bookRental.currentUser.getAddress());
     }
 
     public void checkFunds(ActionEvent event) throws Exception

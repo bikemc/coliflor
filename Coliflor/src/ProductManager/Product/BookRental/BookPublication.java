@@ -10,8 +10,8 @@ public class BookPublication extends Publication implements Comparable<Publicati
     private int rentNumber;
 
 
-    public BookPublication(Product product, Date publicationDate, boolean currentlyAvailable, int id, int bookNumber) {
-        super(product, publicationDate, currentlyAvailable, id);
+    public BookPublication(Product product, String title, Date publicationDate, boolean currentlyAvailable, int id, int bookNumber) {
+        super(product, title,  publicationDate, currentlyAvailable, id);
         this.rentNumber = 0;
         this.bookNumber = bookNumber;
     }

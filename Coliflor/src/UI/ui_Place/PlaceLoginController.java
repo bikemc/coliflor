@@ -58,8 +58,7 @@ public class PlaceLoginController {
 
     public void openPlaceMainPage(ActionEvent event) throws Exception
     {
-        if(rentalData==null)
-             rentalData = new RentalData();
+
         //Default User
         //  users.add(new BookUser("Cansu","cansu@email.com","Çayyolu, Ankara", "cansuy",123, "p",  new Date(1997,12,24),null,null,null,null,null,null,0,null,null,0));
         //rental = new BookRental(rentalData.users, publications, products, payments, contracts);
@@ -92,8 +91,7 @@ public class PlaceLoginController {
 
     public void placeSignup(ActionEvent event) throws Exception {
 
-        rentalData = new RentalData();
-        RentalData.placeRental.getUsers().add(new PlaceUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null));
+        RentalData.placeRental .signup(signupName.getText(),signupUsername.getText(), signupEmail.getText(),signupPassword.getText(), signupAddress.getText(), parseInt(signupPhonenumber.getText()), new Date(1995,12,24));
         Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("    Successfully Signed-up")), 300,200));
         secondStage.show();

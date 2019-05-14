@@ -46,7 +46,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
+    public boolean signup (String name, String username, String email,String password, String address, long phoneNo, Date birth){
         for(int i=0; i<users.size(); i++){
             if((users.get(i)).getUsername().equals(username))
                 return false;
@@ -64,10 +64,12 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     public ArrayList<PublicationT> searchPublication(String searchKey){
         ArrayList<PublicationT> searchResult = new ArrayList<>();
         for(int i=0; i<publications.size(); i++){
+            if (publications.get(i).getTitle() == null) System.out.println("NUllll");
             if(publications.get(i).getTitle().contains(searchKey)){
                 searchResult.add(publications.get(i));
-                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
-                currentUser.getSearchHistory().add(publications.get(i));
+                System.out.println("Current uesr : " + currentUser);
+               // if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                //currentUser.getSearchHistory().add(publications.get(i));
             }
         }
         return searchResult;

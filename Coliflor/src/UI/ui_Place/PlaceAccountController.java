@@ -59,13 +59,12 @@ public class PlaceAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        PlaceUser user = RentalData.returnPlaceUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        userName.setText(RentalData.placeRental.currentUser.getUsername());
+        userSurname.setText(RentalData.placeRental.currentUser.getName());
+        userPhone.setText( Long.toString(RentalData.placeRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.placeRental.currentUser.getEmail());
+        userAddress.setText(RentalData.placeRental.currentUser.getAddress());
     }
     public void settings(ActionEvent event) throws Exception
     {

@@ -99,8 +99,8 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     }
 
     @Override
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo) {
-        if(super.signup(username, email, address, password, birth, name, phoneNo)) {
+    public boolean signup(String name, String username, String email,String password, String address, long phoneNo, Date birth) {
+        if(super.signup(name, username, email,password, address,phoneNo, birth)) {
             BookUser newUser = new BookUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null, null, 0, null, null,0);
             users.add(newUser);
             currentUser = newUser; // konuşalım grupça

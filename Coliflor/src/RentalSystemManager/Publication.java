@@ -10,7 +10,7 @@ public class Publication {
     private Contract contract;
     int id;
 
-    public Publication(Product product, Date publicationDate, boolean currentlyAvailable,  int id) {
+    public Publication(Product product, String title, Date publicationDate, boolean currentlyAvailable,  int id) {
         this.product = product;
         this.publicationDate = publicationDate;
         this.title = title;

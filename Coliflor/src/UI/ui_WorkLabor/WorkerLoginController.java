@@ -65,13 +65,11 @@ public class WorkerLoginController {
 
     public void openWorkerMainPage(ActionEvent event) throws Exception
     {
-        if(rentalData == null)
-            rentalData = new RentalData();
         //DefaultUser
         //users.add(new WorkLaborUser("Cansu","cansu@email.com","Çayyolu, Ankara", "cansuy",123, "p",  new Date(1997,12,24),null,null,null,null,null));
         //rental = new WorkLaborRental(users, publications, products, payments,contracts);
         saveUsername();
-        if (RentalData.bookRental.login(loginUsername.getText(), loginPassword.getText()))
+        if (RentalData.workerRental.login(loginUsername.getText(), loginPassword.getText()))
         {
             ui_Worker = initializeScene("ui_Worker.fxml");
             Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -95,11 +93,7 @@ public class WorkerLoginController {
 
 
     public void workerSignup(ActionEvent event) throws Exception {
-
-        rentalData = new RentalData();
-        rentalData.users.add(new BookUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null,null,0,null,null,0));
-
-        users.add(new WorkLaborUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null));
+        RentalData.workerRental .signup(signupName.getText(),signupUsername.getText(), signupEmail.getText(),signupPassword.getText(), signupAddress.getText(), parseInt(signupPhonenumber.getText()), new Date(1995,12,24));
         Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("     Successfully Signed-up")), 300,200));
         secondStage.show();

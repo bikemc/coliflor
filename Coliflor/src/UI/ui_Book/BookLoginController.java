@@ -1,6 +1,7 @@
 package UI.ui_Book;
 
 import ProductManager.Product.BookRental.*;
+
 import RentalSystemManager.*;
 import UI.RentalData;
 import javafx.application.Application;
@@ -39,8 +40,8 @@ public class BookLoginController {
     protected ArrayList<Book> products = new ArrayList<Book>();
     protected ArrayList<Payment> payments= new ArrayList<Payment>();
     protected ArrayList<BookRentalContract> contracts= new ArrayList<BookRentalContract>();
-    protected BookRental rental;
-    protected RentalData rentalData;
+
+
 
 
     @FXML
@@ -62,8 +63,6 @@ public class BookLoginController {
 
     public void openBookMainPage(ActionEvent event) throws Exception
     {
-        if(rentalData == null)
-          rentalData = new RentalData();
         //Default User
       //  users.add(new BookUser("Cansu","cansu@email.com","Çayyolu, Ankara", "cansuy",123, "p",  new Date(1997,12,24),null,null,null,null,null,null,0,null,null,0));
         //rental = new BookRental(rentalData.users, publications, products, payments, contracts);
@@ -95,8 +94,9 @@ public class BookLoginController {
 
     public void bookSignUp(ActionEvent event) throws Exception {
 
-        rentalData = new RentalData();
-        rentalData.users.add(new BookUser(signupName.getText(),signupEmail.getText(),signupAddress.getText(), signupUsername.getText(), parseInt(signupPhonenumber.getText()), signupPassword.getText(),  new Date(1995,12,24),null,null,null,null,null,null,0,null,null,0));
+
+        if(RentalData.bookRental == null) System.out.println("hello");
+        RentalData.bookRental .signup(signupName.getText(),signupUsername.getText(), signupEmail.getText(),signupPassword.getText(), signupAddress.getText(), parseInt(signupPhonenumber.getText()), new Date(1995,12,24));
         Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("    Successfully Signed-up")), 300,200));
         secondStage.show();

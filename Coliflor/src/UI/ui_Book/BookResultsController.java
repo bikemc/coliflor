@@ -60,7 +60,7 @@ public class BookResultsController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //data = new RentalData();
+
         //rental = new BookRental(null, data.bookPublication, null,null, null);
         System.out.println(RentalData.bookRental == null);
         ArrayList<BookPublication> p = RentalData.bookRental.searchPublication(searchKey);

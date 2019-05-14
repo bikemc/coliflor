@@ -58,13 +58,12 @@ public class WorkerAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        BookUser user = RentalData.returnUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        userName.setText(RentalData.workerRental.currentUser.getUsername());
+        userSurname.setText(RentalData.workerRental.currentUser.getName());
+        userPhone.setText( Long.toString(RentalData.workerRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.workerRental.currentUser.getEmail());
+        userAddress.setText(RentalData.workerRental.currentUser.getAddress());
     }
 
     public void messageWithCompany(ActionEvent event) throws Exception

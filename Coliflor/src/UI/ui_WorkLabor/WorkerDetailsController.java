@@ -46,7 +46,6 @@ public class WorkerDetailsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        workerPublicationData = new RentalData();
         ArrayList<Publication> pubs = RentalData.workerRental.getPublications();
         BufferedReader Buff = null;
         try {
