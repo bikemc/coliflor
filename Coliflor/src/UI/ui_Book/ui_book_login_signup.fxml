@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookLoginController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+      <Button layoutX="130.0" layoutY="311.0" mnemonicParsing="false" onAction="#openBookMainPage" text="Login" />
+      <Button layoutX="612.0" layoutY="420.0" mnemonicParsing="false" onAction="#bookSignUp" prefHeight="27.0" prefWidth="98.0" text="Signup" />
+      <Text layoutX="587.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you do not have an account" wrappingWidth="246.205078125" />
+      <Text fill="white" layoutX="214.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Rental Login" wrappingWidth="373.1650390625">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <TextField fx:id="loginUsername" layoutX="87.0" layoutY="194.0" promptText="Username" />
+      <TextField fx:id="loginPassword" layoutX="87.0" layoutY="255.0" promptText="Password" />
+      <TextField fx:id="signupName" layoutX="588.0" layoutY="152.0" promptText="Name" />
+      <TextField fx:id="signupUsername" layoutX="588.0" layoutY="188.0" promptText="Username" />
+      <TextField fx:id="signupEmail" layoutX="588.0" layoutY="227.0" promptText="Email" />
+      <TextField fx:id="signupPassword" layoutX="588.0" layoutY="265.0" promptText="Password" />
+      <TextField fx:id="signupAddress" layoutX="588.0" layoutY="299.0" promptText="Address" />
+      <TextField fx:id="signupBirthday" layoutX="588.0" layoutY="367.0" promptText="Birthday" />
+      <TextField fx:id="signupPhonenumber" layoutX="588.0" layoutY="334.0" promptText="Phone Number" />
+      <Button layoutX="306.0" layoutY="518.0" mnemonicParsing="false" onAction="#backMainPage" text="Show Other Services" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="107.0" fitWidth="93.0" layoutX="541.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/bookrental.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
