@@ -15,29 +15,29 @@
          <font>
             <Font name="System Bold" size="46.0" />
          </font></Text>
-      <ImageView fitHeight="167.0" fitWidth="234.0" layoutX="41.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="firstEmployee" fitHeight="167.0" fitWidth="234.0" layoutX="41.0" layoutY="118.0" onMouseClicked="#goDetailsOfEmployee1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/math.jpg" />
+         </image></ImageView>
       <Button layoutX="661.0" layoutY="72.0" mnemonicParsing="false" onAction="#openWorkerSearch" prefHeight="34.0" prefWidth="110.0" text="Search" />
-      <Text layoutX="103.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="55.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <ImageView fitHeight="156.0" fitWidth="234.0" layoutX="599.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="167.0" fitWidth="242.0" layoutX="297.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="167.0" fitWidth="234.0" layoutX="39.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="156.0" fitWidth="234.0" layoutX="301.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="167.0" fitWidth="220.0" layoutX="599.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
-      <Text layoutX="55.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="120.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="347.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="418.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="648.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="726.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="320.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="418.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="648.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="726.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="firstPrice" layoutX="160.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="firstName" layoutX="55.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <ImageView fx:id="thirdEmployee" fitHeight="156.0" fitWidth="234.0" layoutX="617.0" layoutY="117.0" onMouseClicked="#goDetailsOfEmployee3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/math2.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="secondEmployee" fitHeight="167.0" fitWidth="242.0" layoutX="330.0" layoutY="118.0" onMouseClicked="#goDetailsOfEmployee2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/nanny.jpg" />
+         </image></ImageView>
+      <Text fx:id="secondName" layoutX="337.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="secondPrice" layoutX="456.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="thirdName" layoutX="627.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="thirdPrice" layoutX="740.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Button layoutX="787.0" layoutY="30.0" mnemonicParsing="false" onAction="#openWorkerAccountPage" prefHeight="34.0" prefWidth="93.0" text="Account" />
       <Button layoutX="787.0" layoutY="72.0" mnemonicParsing="false" onAction="#WorkerLogout" prefHeight="34.0" prefWidth="93.0" text="Log-out" />
-      <Button layoutX="475.0" layoutY="72.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" text="Worker of Month" />
-      <Button layoutX="332.0" layoutY="72.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="108.0" text="Top Workers" />
+      <Button layoutX="475.0" layoutY="72.0" mnemonicParsing="false" onAction="#workerOfMonth" prefHeight="34.0" prefWidth="162.0" text="Worker of Month" />
+      <Button layoutX="332.0" layoutY="72.0" mnemonicParsing="false" onAction="#topWorkers" prefHeight="34.0" prefWidth="108.0" text="Top Workers" />
       <ImageView fitHeight="124.0" fitWidth="93.0" layoutX="243.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/workerrental.png" />

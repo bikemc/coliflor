@@ -29,10 +29,10 @@
       <Text fx:id="services" layoutX="520.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text layoutX="350.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transportation: " />
       <Text fx:id="transportation" layoutX="520.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button layoutX="735.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="122.0" text="Show 3D" />
-      <Button layoutX="713.0" layoutY="204.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="143.0" text="Check Weather" />
-      <Button layoutX="48.0" layoutY="426.0" mnemonicParsing="false" text="View Reviews" />
-      <Button layoutX="675.0" layoutY="261.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Share on social media" />
+      <Button onAction="#show3D" layoutX="735.0" layoutY="152.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="122.0" text="Show 3D" />
+      <Button onAction="#checkWheather" layoutX="713.0" layoutY="204.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="143.0" text="Check Weather" />
+      <Button onAction="#viewReviews" layoutX="48.0" layoutY="426.0" mnemonicParsing="false" text="View Reviews" />
+      <Button onAction="#shareSocialMedia" layoutX="675.0" layoutY="261.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="182.0" text="Share on social media" />
       <Button layoutX="48.0" layoutY="486.0" mnemonicParsing="false" onAction="#openPlaceRentPage" prefHeight="39.0" prefWidth="131.0" text="Rent" />
       <Text layoutX="350.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
       <Text fx:id="pricePlace" layoutX="520.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />

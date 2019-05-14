@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -59,10 +61,23 @@ public class PlaceAccountController implements Initializable {
         }
         RentalData data = new RentalData();
         PlaceUser user = RentalData.returnPlaceUser(username);
-        userName.setText(user.getUsername());
-        userSurname.setText(user.getName());
+        userName.setText(user.getName());
+        userSurname.setText(user.getUsername());
         userPhone.setText(user.getPhoneNumber()+"");
         userEmail.setText(user.getEmail());
         userAddress.setText(user.getAddress());
+    }
+    public void settings(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Settings")), 300,200));
+        secondStage.show();
+    }
+
+    public void messageWithCompany(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Message with Company")), 300,200));
+        secondStage.show();
     }
 }

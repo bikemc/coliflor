@@ -12,7 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -38,6 +40,7 @@ public class PlaceDetailsController implements Initializable{
     @FXML
     private javafx.scene.image.ImageView placeImage;
     private  int savedPlaceID;
+    private  String savedPlaceID2;
     private RentalData placePublicationData;
 
 
@@ -53,9 +56,22 @@ public class PlaceDetailsController implements Initializable{
             e.printStackTrace();
         }
         try {
-            savedPlaceID = parseInt( Buff.readLine());
+            savedPlaceID2 =  Buff.readLine();
+            if(isStringInt( savedPlaceID2)) //????
+                savedPlaceID =  parseInt(savedPlaceID2);
+            else
+                savedPlaceID = RentalData.returnPlaceID(savedPlaceID2);
         } catch (IOException e) {
             e.printStackTrace();
+
+            /*
+            savedBookID2 =  Buff.readLine();
+            System.out.println("id2"+savedBookID2);
+            if(isStringInt( savedBookID2)) //????
+                savedBookID =  parseInt(savedBookID2);
+            else
+                savedBookID = RentalData.returnWorkerID(savedBookID2); //??????????????
+             */
         }
 
         namePlace.setText(((Place)pubs.get(savedPlaceID-1).getProduct()).getPlaceName());
@@ -82,7 +98,17 @@ public class PlaceDetailsController implements Initializable{
 
     }
 
-
+    public static boolean isStringInt(String s)
+    {
+        try
+        {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException ex)
+        {
+            return false;
+        }
+    }
     public Scene initializeScene(String fxmlName) throws java.io.IOException
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlName));
@@ -110,5 +136,31 @@ public class PlaceDetailsController implements Initializable{
         ui_place_rent = initializeScene("ui_place_rent.fxml");
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_place_rent);
+    }
+
+    public void viewReviews(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Reviews")), 300,200));
+        secondStage.show();
+    }
+
+    public void shareSocialMedia(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Shared on Social Media")), 300,200));
+        secondStage.show();
+    }
+    public void show3D(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("   3D")), 300,200));
+        secondStage.show();
+    }
+    public void checkWheather(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Sunny")), 300,200));
+        secondStage.show();
     }
 }

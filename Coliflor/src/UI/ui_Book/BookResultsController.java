@@ -7,12 +7,18 @@ import RentalSystemManager.Publication;
 import RentalSystemManager.Rental;
 import UI.RentalData;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -21,7 +27,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
+import javafx.scene.image.Image;
 import static java.lang.Integer.parseInt;
 
 public class BookResultsController implements Initializable {
@@ -34,6 +40,11 @@ public class BookResultsController implements Initializable {
     private String searchKey;
     BookRental rental;
     RentalData data;
+
+    @FXML
+    private Text resultName;
+    @FXML
+    private ImageView resultImage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -56,10 +67,20 @@ public class BookResultsController implements Initializable {
 
         //for (BookPublication p:searchedPublications) System.out.println(((Book)p.getProduct()).getBookTitle());
 
-        System.out.println("Size: " + p.size());
-
-
-
+       // System.out.println("Size: " + p.size());
+        resultName.setText(((Book)p.get(0).getProduct()).getBookTitle());
+        if(((Book)p.get(0).getProduct()).getId() == 1)
+            resultImage.setImage(new Image("UI/Images/calıkusu.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 2)
+            resultImage.setImage(new Image("UI/Images/sefiller.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() ==  3)
+            resultImage.setImage(new Image("UI/Images/lordofrings.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 4)
+            resultImage.setImage(new Image("UI/Images/imprpb.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 5)
+            resultImage.setImage(new Image("UI/Images/hungergames.jpg"));
+        else if(((Book)p.get(0).getProduct()).getId() == 6)
+            resultImage.setImage(new Image("UI/Images/warandpeace.jpg"));
 
 
     }
@@ -90,6 +111,13 @@ public class BookResultsController implements Initializable {
         ui_book_details = initializeScene("ui_book_details.fxml");
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_book_details);
+    }
+
+    public void pay(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Pay")), 300,200));
+        secondStage.show();
     }
 
 

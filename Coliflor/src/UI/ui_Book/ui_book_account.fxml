@@ -17,7 +17,7 @@
                <Font name="System Bold" size="30.0" />
             </font></Text>
          <Text layoutX="80.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-         <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:" />
+         <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
          <Text layoutX="80.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
          <Text layoutX="80.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
          <Text layoutX="78.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />
@@ -26,9 +26,9 @@
          <Text fx:id="userEmail" layoutX="188.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          <Text fx:id="userPhone" layoutX="188.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
          <Text fx:id="userAddress" layoutX="188.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-         <Button layoutX="672.0" layoutY="124.0" mnemonicParsing="false" text="Settings" />
-         <Button layoutX="672.0" layoutY="181.0" mnemonicParsing="false" text="Message with Company" />
-      <Button layoutX="672.0" layoutY="233.0" mnemonicParsing="false" text="Check Funds" />
+         <Button layoutX="672.0" layoutY="124.0" mnemonicParsing="false" onAction="#settings" text="Settings" />
+         <Button layoutX="672.0" layoutY="181.0" mnemonicParsing="false" onAction="#messageWithCompany" text="Message with Company" />
+      <Button layoutX="672.0" layoutY="233.0" mnemonicParsing="false" onAction="#checkFunds" text="Check Funds" />
        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
        <ImageView fitHeight="107.0" fitWidth="93.0" layoutX="213.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
            <image>
