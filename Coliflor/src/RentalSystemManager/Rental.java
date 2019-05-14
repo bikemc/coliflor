@@ -46,7 +46,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
+    public boolean signup (String name, String username, String email,String password, String address, long phoneNo, Date birth){
         for(int i=0; i<users.size(); i++){
             if((users.get(i)).getUsername().equals(username))
                 return false;

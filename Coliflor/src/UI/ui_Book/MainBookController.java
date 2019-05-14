@@ -38,6 +38,7 @@ public class MainBookController implements Initializable {
     private RentalData bookData, bookPublicationData;
     private Scene ui_book_details;
 
+
     private String currentUsername;
     @FXML
     private Text firstName, firstPrice, secondName, secondPrice, thirdName, thirdPrice, forthName, forthPrice, fifthName, fifthPrice, sixthName, sixthPrice;
@@ -51,8 +52,7 @@ public class MainBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //bookData = new RentalData();
-        //bookPublicationData = new RentalData();
+
         ArrayList<BookPublication> pubs = RentalData.bookRental.getPublications();
         firstName.setText(((Book)(pubs.get(0).getProduct())).getBookTitle());
         secondName.setText(((Book)(pubs.get(1).getProduct())).getBookTitle());

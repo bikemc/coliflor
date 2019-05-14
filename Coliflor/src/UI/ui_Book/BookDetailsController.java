@@ -50,7 +50,6 @@ public class BookDetailsController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        bookPublicationData = new RentalData();
         ArrayList<BookPublication> pubs = RentalData.bookRental.getPublications();
         // summaryText.setText(publication.getProduct().getDescription());
         BufferedReader Buff = null;

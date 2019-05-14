@@ -18,7 +18,7 @@
             <Font name="System Bold" size="30.0" />
          </font></Text>
       <Text layoutX="80.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-      <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:" />
+      <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
       <Text layoutX="80.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
       <Text layoutX="80.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
       <Text layoutX="78.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />

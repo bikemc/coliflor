@@ -26,7 +26,7 @@ import static java.lang.Integer.parseInt;
 public class BookAccountController implements Initializable {
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Book;
+    private Scene ui_Book, ui_Book_accountsettings;
     private String username;
 
     @FXML
@@ -60,13 +60,14 @@ public class BookAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        BookUser user = RentalData.returnUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        System.out.println(RentalData.bookRental.currentUser.getUsername());
+        // BookUser user = RentalData.returnUser(username);
+        userName.setText(RentalData.bookRental.currentUser.getName());
+        userSurname.setText(RentalData.bookRental.currentUser.getUsername());
+        userPhone.setText( Long.toString(RentalData.bookRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.bookRental.currentUser.getEmail());
+        userAddress.setText(RentalData.bookRental.currentUser.getAddress());
     }
 
     public void checkFunds(ActionEvent event) throws Exception
@@ -78,9 +79,12 @@ public class BookAccountController implements Initializable {
 
     public void settings(ActionEvent event) throws Exception
     {
-        Stage secondStage = new Stage();
+       /* Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("    Settings")), 300,200));
-        secondStage.show();
+        secondStage.show();*/
+        ui_Book_accountsettings = initializeScene("ui_book_account_settings.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_Book_accountsettings);
     }
 
     public void messageWithCompany(ActionEvent event) throws Exception

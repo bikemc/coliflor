@@ -46,7 +46,6 @@ public class PlaceDetailsController implements Initializable{
 
     public void initialize(URL location, ResourceBundle resources) {
 
-        placePublicationData = new RentalData();
         ArrayList<Publication> pubs = RentalData.placeRental.getPublications();
         // summaryText.setText(publication.getProduct().getDescription());
         BufferedReader Buff = null;

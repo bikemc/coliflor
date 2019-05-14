@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 public class WorkerAccountController implements Initializable {
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Worker;
+    private Scene ui_Worker,ui_worker_accountsettings;
     private String username;
 
     @FXML
@@ -58,13 +58,12 @@ public class WorkerAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        BookUser user = RentalData.returnUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        userName.setText(RentalData.workerRental.currentUser.getName());
+        userSurname.setText(RentalData.workerRental.currentUser.getUsername());
+        userPhone.setText( Long.toString(RentalData.workerRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.workerRental.currentUser.getEmail());
+        userAddress.setText(RentalData.workerRental.currentUser.getAddress());
     }
 
     public void messageWithCompany(ActionEvent event) throws Exception
@@ -72,12 +71,16 @@ public class WorkerAccountController implements Initializable {
         Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("    Message With Company")), 300,200));
         secondStage.show();
+
     }
 
     public void settings(ActionEvent event) throws Exception
     {
-        Stage secondStage = new Stage();
+        /*Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("     Settings")), 300,200));
-        secondStage.show();
+        secondStage.show();*/
+        ui_worker_accountsettings = initializeScene("ui_worker_account_settings.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_worker_accountsettings);
     }
 }

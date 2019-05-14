@@ -76,8 +76,8 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
         return true;
     }
     @Override
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo) {
-        if(super.signup(username, email, address, password, birth, name, phoneNo)) {
+    public boolean signup(String name, String username, String email,String password, String address, long phoneNo, Date birth) {
+        if(super.signup(name, username, email,password, address,phoneNo, birth)) {
             PlaceUser newUser = new PlaceUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null);
             users.add(newUser);
             currentUser = newUser; // konuşalım grupça

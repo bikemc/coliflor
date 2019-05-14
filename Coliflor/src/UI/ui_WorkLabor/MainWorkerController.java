@@ -50,8 +50,6 @@ public class MainWorkerController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //bookData = new RentalData();
-        //bookPublicationData = new RentalData();
         ArrayList<Publication> pubs = RentalData.workerRental.getPublications();
         firstName.setText(((Employee)(pubs.get(0).getProduct())).getEmployeeName());
         secondName.setText(((Employee)(pubs.get(1).getProduct())).getEmployeeName());

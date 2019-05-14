@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 public class PlaceAccountController implements Initializable {
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Place;
+    private Scene ui_Place, ui_place_accountsettings;
     private String username;
     @FXML
     private Text userName, userSurname, userPhone, userEmail, userAddress;
@@ -59,19 +59,21 @@ public class PlaceAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        PlaceUser user = RentalData.returnPlaceUser(username);
-        userName.setText(user.getName());
-        userSurname.setText(user.getUsername());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        userName.setText(RentalData.placeRental.currentUser.getName());
+        userSurname.setText(RentalData.placeRental.currentUser.getUsername());
+        userPhone.setText( Long.toString(RentalData.placeRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.placeRental.currentUser.getEmail());
+        userAddress.setText(RentalData.placeRental.currentUser.getAddress());
     }
     public void settings(ActionEvent event) throws Exception
     {
-        Stage secondStage = new Stage();
+        /*Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("    Settings")), 300,200));
-        secondStage.show();
+        secondStage.show();*/
+        ui_place_accountsettings = initializeScene("ui_place_account_settings.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_place_accountsettings);
     }
 
     public void messageWithCompany(ActionEvent event) throws Exception
