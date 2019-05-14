@@ -68,6 +68,7 @@ public class BookDetailsController implements Initializable {
             e.printStackTrace();
         }
 
+        System.out.println("sss " + savedBookID);
         nameBook.setText(((Book)pubs.get(savedBookID-1).getProduct()).getBookTitle());
         priceBook.setText(pubs.get(savedBookID-1).getProduct().getPrice() + "TL");
         summaryBook.setText(pubs.get(savedBookID-1).getProduct().getDescription());
@@ -128,6 +129,10 @@ public class BookDetailsController implements Initializable {
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_book_rent);
     }
+
+
+
+
 
 
 }

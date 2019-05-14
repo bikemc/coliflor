@@ -12,10 +12,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -204,6 +206,13 @@ public class MainBookController implements Initializable {
         ui_book_details = initializeScene("ui_book_details.fxml");
         Stage primaryStage = (Stage)((Node)savasvebaris).getScene().getWindow();
         primaryStage.setScene(ui_book_details);
+    }
+
+    public void listMostRentedBooks(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Most Rented List")), 300,200));
+        secondStage.show();
     }
 
 

@@ -14,10 +14,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -122,5 +124,19 @@ public class MainWorkerController implements Initializable {
         ui_worker_details = initializeScene("ui_worker_details.fxml");
         Stage primaryStage = (Stage)((Node)thirdEmployee).getScene().getWindow();
         primaryStage.setScene(ui_worker_details);
+    }
+
+    public void topWorkers(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Top Workers")), 300,200));
+        secondStage.show();
+    }
+
+    public void workerOfMonth(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Worker of Month")), 300,200));
+        secondStage.show();
     }
 }

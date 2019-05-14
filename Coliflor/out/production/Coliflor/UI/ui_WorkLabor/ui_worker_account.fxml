@@ -27,8 +27,8 @@
       <Text fx:id="userEmail" layoutX="188.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="userPhone" layoutX="188.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="userAddress" layoutX="188.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button layoutX="672.0" layoutY="143.0" mnemonicParsing="false" text="Settings" />
-      <Button layoutX="672.0" layoutY="206.0" mnemonicParsing="false" text="Message with Company" />
+      <Button layoutX="672.0" layoutY="143.0" mnemonicParsing="false" onAction="#settings" text="Settings" />
+      <Button layoutX="672.0" layoutY="206.0" mnemonicParsing="false" onAction="#messageWithCompany" text="Message with Company" />
       <ImageView fitHeight="136.0" fitWidth="126.0" layoutX="214.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/workerrental.png" />

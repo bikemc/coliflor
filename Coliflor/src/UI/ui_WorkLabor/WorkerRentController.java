@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class WorkerRentController {
@@ -33,6 +35,13 @@ public class WorkerRentController {
         ui_Worker = initializeScene("ui_Worker.fxml");
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_Worker);
+    }
+
+    public void pay(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Payment Successfull")), 300,200));
+        secondStage.show();
     }
 
 

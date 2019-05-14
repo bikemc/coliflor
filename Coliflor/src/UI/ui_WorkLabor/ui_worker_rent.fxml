@@ -19,7 +19,7 @@
             <Font name="System Bold" size="30.0" />
         </font>
     </Text>
-    <Button layoutX="43.0" layoutY="327.0" mnemonicParsing="false" text="Pay" />
+    <Button layoutX="43.0" layoutY="327.0" mnemonicParsing="false" onAction="#pay" text="Pay" />
     <Button layoutX="619.0" layoutY="525.0" mnemonicParsing="false" onAction="#backWorkerMainPage" prefHeight="45.0" prefWidth="143.0" text="Back to MainPage" />
     <Button layoutX="781.0" layoutY="524.0" mnemonicParsing="false" onAction="#backWorkerDetailsPage" prefHeight="45.0" prefWidth="79.0" text="Back" />
       <Text layoutX="46.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Location:" />

@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -66,4 +68,28 @@ public class BookAccountController implements Initializable {
         userEmail.setText(user.getEmail());
         userAddress.setText(user.getAddress());
     }
+
+    public void checkFunds(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Fund")), 300,200));
+        secondStage.show();
+    }
+
+    public void settings(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Settings")), 300,200));
+        secondStage.show();
+    }
+
+    public void messageWithCompany(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Message with Company")), 300,200));
+        secondStage.show();
+    }
+
+
+
 }

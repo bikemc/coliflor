@@ -38,6 +38,7 @@ public class PlaceDetailsController implements Initializable{
     @FXML
     private javafx.scene.image.ImageView placeImage;
     private  int savedPlaceID;
+    private  String savedPlaceID2;
     private RentalData placePublicationData;
 
 
@@ -53,9 +54,22 @@ public class PlaceDetailsController implements Initializable{
             e.printStackTrace();
         }
         try {
-            savedPlaceID = parseInt( Buff.readLine());
+            savedPlaceID2 =  Buff.readLine();
+            if(isStringInt( savedPlaceID2)) //????
+                savedPlaceID =  parseInt(savedPlaceID2);
+            else
+                savedPlaceID = RentalData.returnPlaceID(savedPlaceID2);
         } catch (IOException e) {
             e.printStackTrace();
+
+            /*
+            savedBookID2 =  Buff.readLine();
+            System.out.println("id2"+savedBookID2);
+            if(isStringInt( savedBookID2)) //????
+                savedBookID =  parseInt(savedBookID2);
+            else
+                savedBookID = RentalData.returnWorkerID(savedBookID2); //??????????????
+             */
         }
 
         namePlace.setText(((Place)pubs.get(savedPlaceID-1).getProduct()).getPlaceName());
@@ -82,7 +96,17 @@ public class PlaceDetailsController implements Initializable{
 
     }
 
-
+    public static boolean isStringInt(String s)
+    {
+        try
+        {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException ex)
+        {
+            return false;
+        }
+    }
     public Scene initializeScene(String fxmlName) throws java.io.IOException
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlName));

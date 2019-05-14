@@ -68,8 +68,8 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
             if(publications.get(i).getTitle().contains(searchKey)){
                 searchResult.add(publications.get(i));
                 System.out.println("Current uesr : " + currentUser);
-                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
-                currentUser.getSearchHistory().add(publications.get(i));
+               // if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                //currentUser.getSearchHistory().add(publications.get(i));
             }
         }
         return searchResult;

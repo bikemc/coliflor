@@ -34,16 +34,6 @@
             <Font name="System Bold" size="21.0" />
         </font>
     </Text>
-    <ChoiceBox fx:id="workerType" layoutX="189.0" layoutY="153.0" prefWidth="150.0" value="Novel">
-        <items>
-            <FXCollections fx:factory="observableArrayList">
-                <String fx:value="Teacher" />
-                <String fx:value="Dancer" />
-                <String fx:value="Servant" />
-                <String fx:value="Cheff" />
-            </FXCollections>
-        </items>
-    </ChoiceBox>
     <Button layoutX="745.0" layoutY="523.0" mnemonicParsing="false" onAction="#backMainWorkerPage" prefHeight="39.0" prefWidth="119.0" text="Back" />
     <Button layoutX="54.0" layoutY="451.0" mnemonicParsing="false" onAction="#openWorkerResultPage" prefHeight="39.0" prefWidth="119.0" text="Search" />
       <TextField layoutX="186.0" layoutY="214.0" prefHeight="39.0" prefWidth="156.0" />
@@ -66,5 +56,6 @@
             <Image url="@../Images/workerrental.png" />
          </image>
       </ImageView>
+      <TextField fx:id="occupation" layoutX="186.0" layoutY="159.0" prefHeight="35.0" prefWidth="156.0" />
 </children>
 </AnchorPane>
