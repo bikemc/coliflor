@@ -2,6 +2,7 @@ package ProductManager.Product.PlaceRental;
 
 import ProductManager.CommonalityManager.BookPlace.BookPlace;
 import ProductManager.CommonalityManager.WorkPlace.WorkPlace;
+import ProductManager.Product.WorkLaborRental.WorkLaborRental;
 import RentalSystemManager.*;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.Date;
 /**
  * Created by pc on 24.04.2019.
  */
-public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRentalContract>  implements BookPlace, WorkPlace{
+public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRentalContract>  implements BookPlace, WorkPlace<Place>{
 
     public PlaceRental(ArrayList<PlaceUser> users, ArrayList<Publication> publications, ArrayList<Place> products, ArrayList<Payment> payments, ArrayList<PlaceRentalContract> contracts) {
         super(users, publications, products, payments, contracts);
@@ -74,19 +75,25 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
     public boolean shareInSocialMedia(Publication publication, String socialMedia) {
         return true;
     }
+    @Override
+    public boolean signup(String name, String username, String email,String password, String address, long phoneNo, Date birth) {
+        if(super.signup(name, username, email,password, address,phoneNo, birth)) {
+            PlaceUser newUser = new PlaceUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null);
+            users.add(newUser);
+            currentUser = newUser; // konuşalım grupça
+            return true;
+        }
+        return false;
+    }
 
     @Override
-    public ArrayList<Product> listPositivelyRated() {
+    public ArrayList<Place> listPositivelyRated() {
         ArrayList<Place> positivelyRated = new ArrayList<>();
-        ArrayList<Product> positivelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             positivelyRated.add((Place) products.get(i));
         }
         Collections.sort(positivelyRated);
-        for (int i = 0; i < positivelyRated.size(); i++) {
-            positivelyRatedProduct.add((Product)positivelyRated.get(i));
-        }
-        return positivelyRatedProduct;
+        return positivelyRated;
     }
 
     @Override
@@ -101,18 +108,14 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
     }
 
     @Override
-    public ArrayList<Product> listNegativelyRated() {
+    public ArrayList<Place> listNegativelyRated() {
         ArrayList<Place> negativelyRated = new ArrayList<>();
-        ArrayList<Product>  negativelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             negativelyRated.add((Place) products.get(i));
         }
         Collections.sort( negativelyRated);
         Collections.reverse( negativelyRated);
-        for (int i = 0; i <  negativelyRated.size(); i++) {
-            negativelyRatedProduct.add((Product) negativelyRated.get(i));
-        }
-        return  negativelyRatedProduct;
+        return  negativelyRated;
     }
 
     @Override
@@ -128,6 +131,19 @@ public class PlaceRental extends Rental<Place, PlaceUser, Publication, PlaceRent
             }
         }
         return false;
+    }
+
+    @Override
+    public ArrayList<Place> searchProduct(String searchKey) {
+        ArrayList<Place> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(((Place)publications.get(i).getProduct()).getPlaceName().contains(searchKey)){
+                searchResult.add(products.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
     }
 
 

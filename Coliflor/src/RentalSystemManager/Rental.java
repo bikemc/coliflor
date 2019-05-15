@@ -38,7 +38,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
 
     public boolean login(String username, String password){
         for(int i=0; i<users.size(); i++){
-            if((users.get(i)).getName().equals(username) && (users.get(i)).getPassword().equals(password)){
+            if((users.get(i)).getUsername().equals(username) && (users.get(i)).getPassword().equals(password)){
                 currentUser = users.get(i);
                 return true;
             }
@@ -46,9 +46,9 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
+    public boolean signup (String name, String username, String email,String password, String address, long phoneNo, Date birth){
         for(int i=0; i<users.size(); i++){
-            if((users.get(i)).getName().equals(username))
+            if((users.get(i)).getUsername().equals(username))
                 return false;
         }
 
@@ -64,13 +64,17 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     public ArrayList<PublicationT> searchPublication(String searchKey){
         ArrayList<PublicationT> searchResult = new ArrayList<>();
         for(int i=0; i<publications.size(); i++){
-
-            if((publications.get(i)).getProduct().getDescription().contains(searchKey)){
+            if (publications.get(i).getTitle() == null) System.out.println("NUllll");
+            if(publications.get(i).getTitle().contains(searchKey)){
                 searchResult.add(publications.get(i));
+                System.out.println("Current uesr : " + currentUser);
+               // if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                //currentUser.getSearchHistory().add(publications.get(i));
             }
         }
         return searchResult;
     }
+
 
     public boolean sendMessage(String messageContent){
         if(currentUser != null) {
@@ -80,14 +84,9 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public ArrayList<ProductT> searchProduct(String searchKey, String username){
-        ArrayList<ProductT> searchResult = new ArrayList<>();
-        for(int i=0; i<products.size(); i++){
-            if((products.get(i)).getDescription().contains(searchKey)){
-                searchResult.add(products.get(i));
-            }
-        }
-        return searchResult;
+    public ArrayList<ProductT> searchProduct(String searchKey){
+
+        return null;
     }
 
     public boolean rent(UserT user, PublicationT publication,Date startDate, Date endDate){ // paymentı niye döndürüyo paymentı pay de yapıyoz nasıl erişelim
@@ -98,6 +97,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
                         (publications.get(i)).setCurrentlyAvailable(false);
                         (publications.get(i)).getProduct().setOnRent(true);
                         if (pay(publications.get(i),startDate, endDate)){
+                            if(currentUser.getRentalHistory()== null)  currentUser.setRentalHistory(new ArrayList<Publication>());
                             currentUser.getRentalHistory().add( publications.get(i));
                             return true;
                         }
@@ -107,14 +107,28 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         }
         return false;
     }
-
-    public void changeAccountInformation(String name, String password, Date birthDay, long phone){
+    public boolean makeReview(Product p, String review){
+        if(currentUser != null) {
+            for (Product product : products) {
+                if (product.equals(p)) {
+                    Review r = new Review(currentUser, review);
+                    p.getReviews().add(r);
+                    currentUser.getReviews().add(r);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean changeAccountInformation(String name, String password, Date birthDay, long phone){
         if(currentUser != null) {
             currentUser.setName(name);
             currentUser.setPassword(password);
             currentUser.setBirthday(birthDay);
             currentUser.setPhoneNumber(phone);
+            return true;
         }
+        return false;
     }
 
     public boolean request(Product product){
@@ -182,7 +196,13 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         this.contracts = contracts;
     }
 
+    public ArrayList<ProductT> getProducts() {
+        return products;
+    }
 
+    public void setProducts(ArrayList<ProductT> products) {
+        this.products = products;
+    }
 
     @Override
     public ArrayList<PublicationT> filter(String filterType,Object...  filterOptions) {

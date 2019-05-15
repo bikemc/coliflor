@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_WorkLabor.WorkerDetailsController">
+<children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+    <ImageView fx:id="workerImage" fitHeight="239.0" fitWidth="277.0" layoutX="51.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+    <Button layoutX="772.0" layoutY="525.0" mnemonicParsing="false" onAction="#backWorkerResultsPage" prefHeight="45.0" prefWidth="96.0" text="Back" />
+    <Button layoutX="577.0" layoutY="525.0" mnemonicParsing="false" onAction="#backWorkerMainPage" prefHeight="45.0" prefWidth="185.0" text="Back to MainPage" />
+    <Text layoutX="351.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+    <Text layoutX="350.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City:" />
+    <Text layoutX="350.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience Year(s):" />
+    <Text layoutX="350.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation:" />
+    <Text fx:id="workerOccupation" layoutX="517.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="101.99998319149017" />
+    <Button layoutX="48.0" layoutY="426.0" mnemonicParsing="false" onAction="#viewReviews" text="View Reviews" />
+    <Button layoutX="48.0" layoutY="475.0" mnemonicParsing="false" onAction="#openWorkerRentPage" prefHeight="39.0" prefWidth="131.0" text="Rent" />
+      <Text layoutX="350.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+      <Text fx:id="workerPrice" layoutX="517.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button layoutX="210.0" layoutY="426.0" mnemonicParsing="false" onAction="#offerDiscount" prefHeight="27.0" prefWidth="131.0" text="Offer Discount" />
+    <Text fill="white" layoutX="21.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Worker Details">
+        <font>
+            <Font name="System Bold" size="30.0" />
+        </font>
+    </Text>
+      <Text fx:id="workerCity" layoutX="517.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="workerName" layoutX="517.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="workerExperience" layoutX="517.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="351.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:" />
+      <Text fx:id="workerAge" layoutX="517.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Button layoutX="377.0" layoutY="426.0" mnemonicParsing="false" onAction="#compare" prefHeight="27.0" prefWidth="113.0" text="Compare" />
+      <ImageView fitHeight="117.0" fitWidth="131.0" layoutX="250.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/workerrental.png" />
+         </image>
+      </ImageView>
+</children>
+</AnchorPane>

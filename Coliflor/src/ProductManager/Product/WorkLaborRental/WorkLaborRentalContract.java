@@ -12,4 +12,12 @@ public class WorkLaborRentalContract extends Contract {
         super(user, publication, startDate, endDate);
         this.deposit = deposit;
     }
+
+    public double getDeposit() {
+        return deposit;
+    }
+
+    public void setDeposit(double deposit) {
+        this.deposit = deposit;
+    }
 }

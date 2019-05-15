@@ -8,23 +8,27 @@ import java.util.*;
 
 import static ProductManager.Product.BookRental.BookRental.AUTHOR_FILTER;
 
-public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication, WorkLaborRentalContract> implements BookWork,WorkPlace {
+public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication, WorkLaborRentalContract> implements BookWork,WorkPlace<Employee> {
     private ArrayList<Employee> topWorkedList;
-    private Map<String,Employee> workerOfTheMonth;
+    private Employee workerOfTheMonth;
 
     public static final String EXPERIENCE_YEAR_FILTER= "experience";
     public static final String  OCCUPATION_FILTER = "occupation";
     public static final String RATING_FILTER = "rating";
     public static final String EMPLOYEE_FILTER= "name";
 
-    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts, ArrayList<Employee> topWorkedList, Map<String, Employee> workerOfTheMonth) {
+    public WorkLaborRental(ArrayList<WorkLaborUser> users, ArrayList<Publication> publications, ArrayList<Employee> products, ArrayList<Payment> payments, ArrayList<WorkLaborRentalContract> contracts) {
         super(users, publications, products, payments, contracts);
-        this.topWorkedList = topWorkedList;
-        this.workerOfTheMonth = workerOfTheMonth;
+        setTopWorkedList();
+        setWorkerOfTheMonth();
     }
 
     public boolean requestDiscount(WorkLaborUser user, Employee worker, double discountAmount){
-        return new Random().nextBoolean();
+       if(new Random().nextBoolean()){
+           worker.setPrice(worker.getPrice()- discountAmount);
+           return true;
+       }
+       return false;
     }
 
     @Override
@@ -38,40 +42,41 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
         return recomendationList;
     }
     @Override
-    public String meetingLocation (User user, Product book){
-        if(currentUser.getAddress().equals(((Employee)book).getAddress()))  {
+    public String meetingLocation (Product employee){
+        if(currentUser.getAddress().equals(((Employee)employee).getAddress()))  {
             return currentUser.getAddress();
         }
         return null;
     }
-
     @Override
-    public ArrayList<Product> listPositivelyRated() {
+    public boolean signup(String name, String username, String email,String password, String address, long phoneNo, Date birth) {
+        if(super.signup(name, username, email,password, address,phoneNo, birth)) {
+            WorkLaborUser newUser = new WorkLaborUser(name,email, address,username, phoneNo, password, birth, null, null, null, null, null);
+            users.add(newUser);
+            currentUser = newUser; // konuşalım grupça
+            return true;
+        }
+        return false;
+    }
+    @Override
+    public ArrayList<Employee> listPositivelyRated() {
         ArrayList<Employee> positivelyRated = new ArrayList<>();
-        ArrayList<Product> positivelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             positivelyRated.add((Employee) products.get(i));
         }
         Collections.sort(positivelyRated);
-        for (int i = 0; i < positivelyRated.size(); i++) {
-            positivelyRatedProduct.add((Product)positivelyRated.get(i));
-        }
-        return positivelyRatedProduct;
+        return positivelyRated;
     }
 
     @Override
-    public ArrayList<Product> listNegativelyRated() {
+    public ArrayList<Employee> listNegativelyRated() {
         ArrayList<Employee> negativelyRated = new ArrayList<>();
-        ArrayList<Product>  negativelyRatedProduct = new ArrayList<>();
         for (int i = 0; i < products.size(); i++) {
             negativelyRated.add((Employee) products.get(i));
         }
         Collections.sort( negativelyRated);
         Collections.reverse( negativelyRated);
-        for (int i = 0; i <  negativelyRated.size(); i++) {
-            negativelyRatedProduct.add((Product) negativelyRated.get(i));
-        }
-     return  negativelyRatedProduct;
+     return  negativelyRated;
     }
 
     @Override
@@ -83,10 +88,42 @@ public class WorkLaborRental extends Rental<Employee, WorkLaborUser, Publication
     public boolean payDeposit(User user, Publication publication) {
         if(currentUser != null) {
             if(checkCreaditCardInformation(8,null,null,0,0,0)) {
+                publication.getProduct().setPrice(publication.getProduct().getPrice()- ((WorkLaborRentalContract)publication.getContract()).getDeposit());
                 return true;
             }
         }
         return false;
+    }
+
+    public ArrayList<Employee> getTopWorkedList() {
+        return topWorkedList;
+    }
+
+    @Override
+    public ArrayList<Employee> searchProduct(String searchKey) {
+        ArrayList<Employee> searchResult = new ArrayList<>();
+        for(int i=0; i<publications.size(); i++){
+            if(((Employee)publications.get(i).getProduct()).getEmployeeName().contains(searchKey)){
+                searchResult.add(products.get(i));
+                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                currentUser.getSearchHistory().add(publications.get(i));
+            }
+        }
+        return searchResult;
+    }
+
+    public void setTopWorkedList() {
+        Collections.sort(products);
+        this.topWorkedList = products;
+    }
+
+    public Employee getWorkerOfTheMonth() {
+        return workerOfTheMonth;
+    }
+
+    public void setWorkerOfTheMonth() {
+        Collections.sort(products);
+        this.workerOfTheMonth = products.get(0);
     }
 
     @Override
