@@ -1,5 +1,7 @@
 package RentalSystemManager;
 
+import ProductManager.Product.BookRental.BookRentalContract;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -157,11 +159,11 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     }
 
     public boolean checkCreaditCardInformation(long cardNo, String cardName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
-        return new Random().nextBoolean();
+        return true;
     }
 
     public Contract makeContract(Publication publication,Date startDate, Date endDate, Object... contractTypes) {
-        return null;
+      return null;
     }
     // getters and setters
     public ArrayList<UserT> getUsers() {

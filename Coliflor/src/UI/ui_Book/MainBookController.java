@@ -18,6 +18,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -39,12 +41,9 @@ public class MainBookController implements Initializable {
     private Scene ui_book_details;
 
 
-    private String currentUsername;
     @FXML
     private Text firstName, firstPrice, secondName, secondPrice, thirdName, thirdPrice, forthName, forthPrice, fifthName, fifthPrice, sixthName, sixthPrice;
 
-    @FXML
-    private Text currentUser;
 
     @FXML
     private ImageView calikusu, sefiller,yuzuklerinefendisi, olasiliksiz, aclikoyunlari, savasvebaris;
@@ -52,7 +51,6 @@ public class MainBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         ArrayList<BookPublication> pubs = RentalData.bookRental.getPublications();
         firstName.setText(((Book)(pubs.get(0).getProduct())).getBookTitle());
         secondName.setText(((Book)(pubs.get(1).getProduct())).getBookTitle());
@@ -95,13 +93,7 @@ public class MainBookController implements Initializable {
         primaryStage.setScene(ui_book_account);
     }
 
-    public void setCurrentUserName() throws IOException {
-        BufferedReader Buff = new BufferedReader(new FileReader("../logs.txt"));
-        String text = Buff.readLine();
-        currentUsername = text;
-
-    }
-
+/*
     public void goDetailsOfBook1() throws Exception
     {
         try {
@@ -115,8 +107,8 @@ public class MainBookController implements Initializable {
         Stage primaryStage = (Stage)((Node)calikusu).getScene().getWindow();
         primaryStage.setScene(ui_book_details);
     }
+*/
 
-   /*
     public void goDetailsOfBook1() throws Exception
     {
         System.out.println("Hello");
@@ -141,7 +133,7 @@ public class MainBookController implements Initializable {
             e.printStackTrace();
         }
 
-    }*/
+    }
 
     public void goDetailsOfBook2() throws Exception
     {
@@ -211,9 +203,26 @@ public class MainBookController implements Initializable {
     public void listMostRentedBooks(ActionEvent event) throws Exception
     {
         Stage secondStage = new Stage();
-        secondStage.setScene(new Scene(new HBox(300, new Label("    Most Rented List")), 300,200));
+        secondStage.setTitle("Most Rented List");
+        secondStage.setResizable(false);
+        VBox vbox =new VBox(15);
+        ArrayList<BookPublication> mostRentedBooks = RentalData.bookRental.listMostRented();
+
+        for (int i = 0; i < mostRentedBooks.size(); i++){
+            System.out.println(mostRentedBooks.get(i).getTitle());
+            Label title = new Label(mostRentedBooks.get(i).getTitle());
+            title.setFont(new Font(25));
+            // vbox.getChildren().add(title);
+
+            Label author = new Label(((Book)mostRentedBooks.get(i).getProduct()).getAuthor());
+            //title.setFont(new Font(25));
+            VBox v = new VBox();
+            v.getChildren().addAll(title, author);
+            vbox.getChildren().add(v);
+        }
+
+        secondStage.setScene(new Scene(vbox, 300,500));
         secondStage.show();
     }
-
 
 }

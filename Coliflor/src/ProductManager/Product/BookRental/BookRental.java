@@ -113,9 +113,12 @@ public class BookRental extends Rental<Book, BookUser, BookPublication, BookRent
     public boolean pay(BookPublication publication, Date startDate, Date endDate) {
         if(currentUser != null) {
             if(currentUser.getFund() >= publication.getProduct().getPrice()) {
-                if(makeContract( publication,startDate,endDate) != null) {
+                if(makeContract( publication,startDate,endDate,1.0, false) != null) {
+                    System.out.println("publication "+publication.getTitle());
                     Payment pay = new Payment(currentUser,  publication);
-                    currentUser.getPayments().add(pay);
+                    if(currentUser.getPayments()== null) currentUser.setPayments(new ArrayList<Payment>());
+                        currentUser.getPayments().add(pay);
+                        currentUser.setFund(currentUser.getFund()- publication.getProduct().getPrice());
                     return true;
                 }
             }

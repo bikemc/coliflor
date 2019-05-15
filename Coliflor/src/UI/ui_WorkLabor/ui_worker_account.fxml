@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_WorkLabor.WorkerAccountController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_WorkLabor.WorkerAccountController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
 
@@ -17,8 +17,8 @@
          <font>
             <Font name="System Bold" size="30.0" />
          </font></Text>
-      <Text layoutX="80.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
-      <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:" />
+      <Text layoutX="80.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
+      <Text layoutX="80.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
       <Text layoutX="80.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
       <Text layoutX="80.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" />
       <Text layoutX="78.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" />

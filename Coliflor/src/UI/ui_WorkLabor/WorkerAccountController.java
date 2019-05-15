@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 public class WorkerAccountController implements Initializable {
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Worker;
+    private Scene ui_Worker,ui_worker_accountsettings;
     private String username;
 
     @FXML
@@ -75,8 +75,11 @@ public class WorkerAccountController implements Initializable {
 
     public void settings(ActionEvent event) throws Exception
     {
-        Stage secondStage = new Stage();
+        /*Stage secondStage = new Stage();
         secondStage.setScene(new Scene(new HBox(300, new Label("     Settings")), 300,200));
-        secondStage.show();
+        secondStage.show();*/
+        ui_worker_accountsettings = initializeScene("ui_worker_account_settings.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_worker_accountsettings);
     }
 }

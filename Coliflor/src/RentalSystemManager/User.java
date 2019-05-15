@@ -146,11 +146,4 @@ public class User implements Serializable {
         Message newMessage = new Message(currentDate, this, messageContent);
         messages.add(newMessage);
     }
-
-    //Return'nune dikkat
-    public boolean placeRentalRequest(Product product)
-    { // bu olmamalı burda her user type erişebiliyo
-
-        return true;
-    }
 }

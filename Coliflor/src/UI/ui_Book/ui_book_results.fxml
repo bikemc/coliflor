@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookResultsController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookResultsController">
 <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
 
@@ -23,10 +23,9 @@
     </Text>
     <ImageView fx:id="resultImage" fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="41.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="764.0" layoutY="527.0" mnemonicParsing="false" onAction="#backBookSearchPage" prefHeight="45.0" prefWidth="96.0" text="Back" />
     <Button layoutX="242.0" layoutY="237.0" mnemonicParsing="false" onAction="#openBookDetailsPage" text="Details" />
     <Text fx:id="resultName" layoutX="242.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="77.99999266862869" />
-    <Button layoutX="598.0" layoutY="527.0" mnemonicParsing="false" onAction="#backBookMainPage" prefHeight="45.0" prefWidth="157.0" text="Back to MainPage" />
+    <Button layoutX="714.0" layoutY="529.0" mnemonicParsing="false" onAction="#backBookMainPage" prefHeight="45.0" prefWidth="157.0" text="Back to MainPage" />
       <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="150.0" fitWidth="157.0" layoutX="350.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />

@@ -93,8 +93,6 @@ public class BookLoginController {
     }
 
     public void bookSignUp(ActionEvent event) throws Exception {
-
-
         if(RentalData.bookRental == null) System.out.println("hello");
         RentalData.bookRental .signup(signupName.getText(),signupUsername.getText(), signupEmail.getText(),signupPassword.getText(), signupAddress.getText(), parseInt(signupPhonenumber.getText()), new Date(1995,12,24));
         Stage secondStage = new Stage();

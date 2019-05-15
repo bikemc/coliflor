@@ -140,14 +140,27 @@ public class BookDetailsController implements Initializable {
     public void turnOverContract(ActionEvent event) throws Exception
     {
         Stage secondStage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+        Parent root = (Parent)loader.load();
+
+        Label label1;
+        BookDetailsController bookDetailsController = loader.getController();
+        bookDetailsController.publication = RentalData.bookRental.getPublications().get(0);
         secondStage.setScene(new Scene(new HBox(300, new Label("    Turn Over Contract")), 300,200));
         secondStage.show();
     }
 
     public void addtoWishlist(ActionEvent event) throws Exception
     {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+        Parent root = (Parent)loader.load();
+
+        Label label1;
+        BookDetailsController bookDetailsController = loader.getController();
+        bookDetailsController.publication = RentalData.bookRental.getPublications().get(0);
         Stage secondStage = new Stage();
-        secondStage.setScene(new Scene(new HBox(300, new Label("    Added to the wishlist")), 300,200));
+        RentalData.bookRental.addToWishlist((Book)bookDetailsController.publication.getProduct());
+        secondStage.setScene(new Scene(new HBox(300, new Label(RentalData.bookRental.getPublications().get(0).getTitle()+ "    Added to the wishlist")), 300,200));
         secondStage.show();
     }
     public void shareSocialMedia(ActionEvent event) throws Exception

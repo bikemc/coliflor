@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookDetailsController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookDetailsController">
 <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
     <Text fill="white" layoutX="51.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Details">
@@ -17,18 +17,17 @@
         </font>
     </Text>
     <ImageView fx:id="bookImage" fitHeight="239.0" fitWidth="277.0" layoutX="51.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="772.0" layoutY="525.0" mnemonicParsing="false" onAction="#backBookResultsPage" prefHeight="45.0" prefWidth="96.0" text="Back" />
-    <Button layoutX="610.0" layoutY="525.0" mnemonicParsing="false" onAction="#backBookMainPage" prefHeight="45.0" prefWidth="152.0" text="Back to MainPage" />
+    <Button layoutX="701.0" layoutY="528.0" mnemonicParsing="false" onAction="#backBookMainPage" prefHeight="45.0" prefWidth="152.0" text="Back to MainPage" />
     <Text layoutX="350.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
     <Text layoutX="350.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summary:" />
     <Text fx:id="summaryBook" layoutX="445.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-    <Button onAction="#addtoWishlist" layoutX="696.0" layoutY="214.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="153.0" text="Add to Wishlist" />
-    <Button onAction="#viewReviews" layoutX="48.0" layoutY="426.0" mnemonicParsing="false" text="View Reviews" />
-    <Button onAction="#shareSocialMedia" layoutX="696.0" layoutY="254.0" mnemonicParsing="false" text="Share on social media" />
+    <Button layoutX="696.0" layoutY="214.0" mnemonicParsing="false" onAction="#addtoWishlist" prefHeight="27.0" prefWidth="153.0" text="Add to Wishlist" />
+    <Button layoutX="48.0" layoutY="426.0" mnemonicParsing="false" onAction="#viewReviews" text="View Reviews" />
+    <Button layoutX="696.0" layoutY="254.0" mnemonicParsing="false" onAction="#shareSocialMedia" text="Share on social media" />
     <Button layoutX="48.0" layoutY="475.0" mnemonicParsing="false" onAction="#openBookRentPage" prefHeight="39.0" prefWidth="131.0" text="Rent" />
       <Text layoutX="350.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
       <Text fx:id="priceBook" layoutX="439.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button onAction="#turnOverContract" layoutX="228.0" layoutY="426.0" mnemonicParsing="false" text="Turn Over Contract" />
+      <Button layoutX="228.0" layoutY="426.0" mnemonicParsing="false" onAction="#turnOverContract" text="Turn Over Contract" />
     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
     <ImageView fitHeight="107.0" fitWidth="93.0" layoutX="175.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
         <image>
