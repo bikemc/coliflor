@@ -125,6 +125,6 @@ public class Place extends Product implements Comparable<Place>{
 
     @Override
     public int compareTo(Place o) {
-        return (int)(this.rating - o.getRating());
+        return (int)(-this.rating + o.getRating());
     }
 }

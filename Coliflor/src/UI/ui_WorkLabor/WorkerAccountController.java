@@ -9,6 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -22,7 +27,7 @@ import java.util.ResourceBundle;
 public class WorkerAccountController implements Initializable {
     private static final int WIDTH = 900;
     private static final int HEIGHT = 600;
-    private Scene ui_Worker;
+    private Scene ui_Worker,ui_worker_accountsettings;
     private String username;
 
     @FXML
@@ -56,12 +61,40 @@ public class WorkerAccountController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RentalData data = new RentalData();
-        BookUser user = RentalData.returnUser(username);
-        userName.setText(user.getUsername());
-        userSurname.setText(user.getName());
-        userPhone.setText(user.getPhoneNumber()+"");
-        userEmail.setText(user.getEmail());
-        userAddress.setText(user.getAddress());
+
+        userName.setText(RentalData.workerRental.currentUser.getUsername());
+        userSurname.setText(RentalData.workerRental.currentUser.getName());
+        userPhone.setText( Long.toString(RentalData.workerRental.currentUser.getPhoneNumber()));
+        userEmail.setText(RentalData.workerRental.currentUser.getEmail());
+        userAddress.setText(RentalData.workerRental.currentUser.getAddress());
+    }
+
+    public void messageWithCompany(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setTitle("Message With the Company");
+        secondStage.setResizable(false);
+        VBox vbox =new VBox(15);
+        TextField messageText = new TextField();
+        Button sendButton = new Button("Send Message");
+        sendButton.setOnAction(event1 -> {
+            RentalData.workerRental.sendMessage(messageText.getText().toString());
+            secondStage.close();
+        });
+        vbox.getChildren().addAll(messageText, sendButton);
+
+        secondStage.setScene(new Scene(vbox, 300,100));
+        secondStage.show();
+    }
+
+
+    public void settings(ActionEvent event) throws Exception
+    {
+        /*Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("     Settings")), 300,200));
+        secondStage.show();*/
+        ui_worker_accountsettings = initializeScene("ui_worker_account_settings.fxml");
+        Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        primaryStage.setScene(ui_worker_accountsettings);
     }
 }

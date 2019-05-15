@@ -12,7 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -31,44 +33,32 @@ public class PlaceDetailsController implements Initializable{
     private static final int HEIGHT = 600;
     private Scene ui_Place, ui_place_results, ui_place_rent;
 
-    public Publication publication;
+    public static Publication publication;
 
     @FXML
     private Text namePlace, pricePlace, placeLocation, capacityPlace, services, transportation;
     @FXML
     private javafx.scene.image.ImageView placeImage;
     private  int savedPlaceID;
+    private  String savedPlaceID2;
     private RentalData placePublicationData;
 
 
     public void initialize(URL location, ResourceBundle resources) {
 
-        placePublicationData = new RentalData();
-        ArrayList<Publication> pubs = RentalData.placeRental.getPublications();
-        // summaryText.setText(publication.getProduct().getDescription());
-        BufferedReader Buff = null;
-        try {
-            Buff = new BufferedReader(new FileReader("../bookname.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            savedPlaceID = parseInt( Buff.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println(publication == null);
 
-        namePlace.setText(((Place)pubs.get(savedPlaceID-1).getProduct()).getPlaceName());
-        pricePlace.setText(pubs.get(savedPlaceID-1).getProduct().getPrice() + "TL");
-        capacityPlace.setText(((Place) pubs.get(savedPlaceID-1).getProduct()).getCapacity() + "");
-        placeLocation.setText(((Place) pubs.get(savedPlaceID-1).getProduct()).getLocation());
+        namePlace.setText(publication.getTitle());
+        pricePlace.setText(publication.getProduct().getPrice() + "TL");
+        capacityPlace.setText(((Place) publication.getProduct()).getCapacity() + "");
+        placeLocation.setText(((Place) publication.getProduct()).getLocation());
         String offserv = "";
-        for(int i=0; i<((Place) pubs.get(savedPlaceID-1).getProduct()).getServices().size(); i++)
-            offserv += ((Place) pubs.get(savedPlaceID-1).getProduct()).getServices().get(i) + "\n";
+        for(int i=0; i<((Place) publication.getProduct()).getServices().size(); i++)
+            offserv += ((Place) publication.getProduct()).getServices().get(i) + "\n";
         services.setText(offserv);
         String trans = "";
-        for(int i=0; i<((Place) pubs.get(savedPlaceID-1).getProduct()).getTransportationOptions().size(); i++)
-            trans += ((Place) pubs.get(savedPlaceID-1).getProduct()).getTransportationOptions().get(i) + "\n";
+        for(int i=0; i<((Place) publication.getProduct()).getTransportationOptions().size(); i++)
+            trans += ((Place) publication.getProduct()).getTransportationOptions().get(i) + "\n";
         transportation.setText(trans);
 
         if(savedPlaceID == 1)
@@ -80,9 +70,20 @@ public class PlaceDetailsController implements Initializable{
         else if(savedPlaceID == 4)
             placeImage.setImage(new Image("UI/Images/wedding.jpg"));
 
+
     }
 
-
+    public static boolean isStringInt(String s)
+    {
+        try
+        {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException ex)
+        {
+            return false;
+        }
+    }
     public Scene initializeScene(String fxmlName) throws java.io.IOException
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlName));
@@ -110,5 +111,31 @@ public class PlaceDetailsController implements Initializable{
         ui_place_rent = initializeScene("ui_place_rent.fxml");
         Stage primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         primaryStage.setScene(ui_place_rent);
+    }
+
+    public void viewReviews(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Reviews")), 300,200));
+        secondStage.show();
+    }
+
+    public void shareSocialMedia(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Shared on Social Media")), 300,200));
+        secondStage.show();
+    }
+    public void show3D(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("   3D")), 300,200));
+        secondStage.show();
+    }
+    public void checkWheather(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setScene(new Scene(new HBox(300, new Label("    Sunny")), 300,200));
+        secondStage.show();
     }
 }

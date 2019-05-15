@@ -14,6 +14,7 @@ public class Book extends Product {
     private String address;
     private String preview;
     private int point;
+    private String imageURL;
 
     enum GENRES{
         NOVEL, SCIENCEFICTION, DRAMA, ACTION, BIOGRAPHY, COMICS
@@ -86,4 +87,11 @@ public class Book extends Product {
         this.point = point;
     }
 
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
 }

@@ -16,7 +16,7 @@ public class MainPageController extends Application {
     private Scene ui_book_login_signup;
     private Scene ui_place_login_signup;
     private Scene ui_worker_login_signup;
-
+    public RentalData rentalData= new RentalData();
     public static  void main(String []args)
     {
         launch(args);

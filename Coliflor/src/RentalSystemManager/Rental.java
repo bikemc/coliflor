@@ -1,5 +1,7 @@
 package RentalSystemManager;
 
+import ProductManager.Product.BookRental.BookRentalContract;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,7 +48,7 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
         return false;
     }
 
-    public boolean signup(String username, String email, String address, String password, Date birth, String name, long phoneNo){
+    public boolean signup (String name, String username, String email,String password, String address, long phoneNo, Date birth){
         for(int i=0; i<users.size(); i++){
             if((users.get(i)).getUsername().equals(username))
                 return false;
@@ -68,8 +70,8 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
             if(publications.get(i).getTitle().contains(searchKey)){
                 searchResult.add(publications.get(i));
                 System.out.println("Current uesr : " + currentUser);
-                if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
-                currentUser.getSearchHistory().add(publications.get(i));
+               // if(currentUser.getSearchHistory()== null) currentUser.setSearchHistory(new ArrayList<Publication>());
+                //currentUser.getSearchHistory().add(publications.get(i));
             }
         }
         return searchResult;
@@ -157,11 +159,11 @@ public class Rental<ProductT extends Product, UserT extends User, PublicationT e
     }
 
     public boolean checkCreaditCardInformation(long cardNo, String cardName, String cardSurname, int cardVerificationNo, int cardDueDat, int cardDueMonth){
-        return new Random().nextBoolean();
+        return true;
     }
 
     public Contract makeContract(Publication publication,Date startDate, Date endDate, Object... contractTypes) {
-        return null;
+      return null;
     }
     // getters and setters
     public ArrayList<UserT> getUsers() {

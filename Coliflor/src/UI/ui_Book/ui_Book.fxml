@@ -52,7 +52,7 @@
         <Text fx:id="fifthPrice" layoutX="444.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <Text fx:id="sixthName" layoutX="648.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <Text fx:id="sixthPrice" layoutX="760.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button layoutX="458.0" layoutY="72.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="190.0" text="List Most Rented Books" />
+      <Button layoutX="458.0" layoutY="72.0" mnemonicParsing="false" onAction="#listMostRentedBooks" prefHeight="34.0" prefWidth="190.0" text="List Most Rented Books" />
       <Button layoutX="787.0" layoutY="30.0" mnemonicParsing="false" onAction="#openBookAccountPage" prefHeight="34.0" prefWidth="93.0" text="Account" />
       <Button layoutX="787.0" layoutY="72.0" mnemonicParsing="false" onAction="#bookLogout" prefHeight="34.0" prefWidth="93.0" text="Log-out" />
       <ImageView fitHeight="99.0" fitWidth="120.0" layoutX="201.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">

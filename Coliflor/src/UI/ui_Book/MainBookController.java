@@ -12,10 +12,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -36,12 +40,10 @@ public class MainBookController implements Initializable {
     private RentalData bookData, bookPublicationData;
     private Scene ui_book_details;
 
-    private String currentUsername;
+
     @FXML
     private Text firstName, firstPrice, secondName, secondPrice, thirdName, thirdPrice, forthName, forthPrice, fifthName, fifthPrice, sixthName, sixthPrice;
 
-    @FXML
-    private Text currentUser;
 
     @FXML
     private ImageView calikusu, sefiller,yuzuklerinefendisi, olasiliksiz, aclikoyunlari, savasvebaris;
@@ -49,8 +51,6 @@ public class MainBookController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //bookData = new RentalData();
-        //bookPublicationData = new RentalData();
         ArrayList<BookPublication> pubs = RentalData.bookRental.getPublications();
         firstName.setText(((Book)(pubs.get(0).getProduct())).getBookTitle());
         secondName.setText(((Book)(pubs.get(1).getProduct())).getBookTitle());
@@ -93,13 +93,7 @@ public class MainBookController implements Initializable {
         primaryStage.setScene(ui_book_account);
     }
 
-    public void setCurrentUserName() throws IOException {
-        BufferedReader Buff = new BufferedReader(new FileReader("../logs.txt"));
-        String text = Buff.readLine();
-        currentUsername = text;
-
-    }
-
+/*
     public void goDetailsOfBook1() throws Exception
     {
         try {
@@ -113,98 +107,165 @@ public class MainBookController implements Initializable {
         Stage primaryStage = (Stage)((Node)calikusu).getScene().getWindow();
         primaryStage.setScene(ui_book_details);
     }
+*/
 
-   /*
     public void goDetailsOfBook1() throws Exception
     {
-        System.out.println("Hello");
-
+        System.out.println("hello");
         try {
-
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(0);
+
+            BookDetailsController bookDetailsController= loader.getController();
             Parent root = (Parent)loader.load();
-
-
-            BookDetailsController bookDetailsController = loader.getController();
-            bookDetailsController.publication = RentalData.bookRental.getPublications().get(0);
-            System.out.println("hello");
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(0) == null);
             Stage stage = new Stage();
             stage.setScene(new Scene(root,WIDTH, HEIGHT));
             stage.show();
-           // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
             e.printStackTrace();
         }
 
-    }*/
+    }
 
     public void goDetailsOfBook2() throws Exception
     {
+        System.out.println("hello");
         try {
-            Files.write(Paths.get("../bookname.txt"), "2".getBytes());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(1);
+
+            BookDetailsController bookDetailsController= loader.getController();
+            Parent root = (Parent)loader.load();
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(1) == null);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root,WIDTH, HEIGHT));
+            stage.show();
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
-        ui_book_details = initializeScene("ui_book_details.fxml");
-        Stage primaryStage = (Stage)((Node)sefiller).getScene().getWindow();
-        primaryStage.setScene(ui_book_details);
     }
 
     public void goDetailsOfBook3() throws Exception
     {
+        System.out.println("hello");
         try {
-            Files.write(Paths.get("../bookname.txt"), "3".getBytes());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(2);
+
+            BookDetailsController bookDetailsController= loader.getController();
+            Parent root = (Parent)loader.load();
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(2) == null);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root,WIDTH, HEIGHT));
+            stage.show();
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
-        ui_book_details = initializeScene("ui_book_details.fxml");
-        Stage primaryStage = (Stage)((Node)yuzuklerinefendisi).getScene().getWindow();
-        primaryStage.setScene(ui_book_details);
     }
 
     public void goDetailsOfBook4() throws Exception
     {
+        System.out.println("hello");
         try {
-            Files.write(Paths.get("../bookname.txt"), "4".getBytes());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(3);
+
+            BookDetailsController bookDetailsController= loader.getController();
+            Parent root = (Parent)loader.load();
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(3) == null);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root,WIDTH, HEIGHT));
+            stage.show();
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
-        ui_book_details = initializeScene("ui_book_details.fxml");
-        Stage primaryStage = (Stage)((Node)olasiliksiz).getScene().getWindow();
-        primaryStage.setScene(ui_book_details);
     }
 
     public void goDetailsOfBook5() throws Exception
     {
+        System.out.println("hello");
         try {
-            Files.write(Paths.get("../bookname.txt"), "5".getBytes());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(4);
+
+            BookDetailsController bookDetailsController= loader.getController();
+            Parent root = (Parent)loader.load();
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(4) == null);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root,WIDTH, HEIGHT));
+            stage.show();
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
-        ui_book_details = initializeScene("ui_book_details.fxml");
-        Stage primaryStage = (Stage)((Node)aclikoyunlari).getScene().getWindow();
-        primaryStage.setScene(ui_book_details);
     }
 
     public void goDetailsOfBook6() throws Exception
     {
+        System.out.println("hello");
         try {
-            Files.write(Paths.get("../bookname.txt"), "6".getBytes());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ui_book_details.fxml"));
+            BookDetailsController.publication = RentalData.bookRental.getPublications().get(5);
+
+            BookDetailsController bookDetailsController= loader.getController();
+            Parent root = (Parent)loader.load();
+            System.out.println( " dfsgfsdgdg "+ RentalData.bookRental.getPublications().get(5) == null);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root,WIDTH, HEIGHT));
+            stage.show();
+            // Files.write(Paths.get("../bookname.txt"), "1".getBytes());
+
 
         }catch (Exception e) {
             //exception handling left as an exercise for the reader
+            e.printStackTrace();
         }
-        ui_book_details = initializeScene("ui_book_details.fxml");
-        Stage primaryStage = (Stage)((Node)savasvebaris).getScene().getWindow();
-        primaryStage.setScene(ui_book_details);
     }
 
+    public void listMostRentedBooks(ActionEvent event) throws Exception
+    {
+        Stage secondStage = new Stage();
+        secondStage.setTitle("Most Rented List");
+        secondStage.setResizable(false);
+        VBox vbox =new VBox(15);
+        ArrayList<BookPublication> mostRentedBooks = RentalData.bookRental.listMostRented();
+
+        for (int i = 0; i < mostRentedBooks.size(); i++){
+            System.out.println(mostRentedBooks.get(i).getTitle());
+            Label title = new Label(mostRentedBooks.get(i).getTitle());
+            title.setFont(new Font(25));
+            // vbox.getChildren().add(title);
+
+            Label author = new Label(((Book)mostRentedBooks.get(i).getProduct()).getAuthor());
+            Label rentNo= new Label("Rent count: "+mostRentedBooks.get(i).getRentNumber());
+            //title.setFont(new Font(25));
+            VBox v = new VBox();
+            v.getChildren().addAll(title, author,rentNo);
+            vbox.getChildren().add(v);
+        }
+
+        secondStage.setScene(new Scene(vbox, 300,500));
+        secondStage.show();
+    }
 
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookSearchController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.ui_Book.BookSearchController">
 <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9b9b9" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
 
@@ -46,7 +46,7 @@
             </FXCollections>
         </items>
     </ChoiceBox>
-    <Button layoutX="745.0" layoutY="523.0" mnemonicParsing="false" onAction="#backMainBookPage" prefHeight="39.0" prefWidth="119.0" text="Back" />
+    <Button layoutX="690.0" layoutY="523.0" mnemonicParsing="false" onAction="#backMainBookPage" prefHeight="39.0" prefWidth="174.0" text="Back to Main Page" />
     <Button layoutX="54.0" layoutY="451.0" mnemonicParsing="false" onAction="#openBookResultPage" prefHeight="39.0" prefWidth="119.0" text="Search" />
       <CheckBox layoutX="47.0" layoutY="355.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="197.0" text="Sort By Price">
          <font>
